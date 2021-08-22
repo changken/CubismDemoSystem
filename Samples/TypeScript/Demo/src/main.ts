@@ -7,17 +7,59 @@
 
 import { LAppDelegate } from './lappdelegate';
 import * as LAppDefine from './lappdefine';
+import { LAppLive2DManager } from './lapplive2dmanager';
+
+// const lAppDelegates = [];
+
+/**
+ * changken
+ */
+// const renderCubismModel = (renderDom) => {
+//   lAppDelegates.push(new LAppDelegate());
+//   // create the application instance
+//   if (lAppDelegates[lAppDelegates.length - 1].initialize(renderDom) == false) {
+//     return;
+//   }
+
+//   lAppDelegates[lAppDelegates.length - 1].run();
+// }
+const renderCubismModel = (renderDom) => {
+  // create the application instance
+  if (LAppDelegate.getInstance().initialize(renderDom) == false) {
+    return;
+  }
+
+  LAppDelegate.getInstance().run();
+}
 
 /**
  * ブラウザロード後の処理
  */
 window.onload = (): void => {
-  // create the application instance
-  if (LAppDelegate.getInstance().initialize() == false) {
-    return;
-  }
+  //renderCubismModel([document.querySelector('#slide1'), document.querySelector('#slide2'), document.querySelector('#slide3')]);
+  renderCubismModel(document.querySelector('#slide1'));
+  //renderCubismModel(document.querySelector('#slide2'));
+  //renderCubismModel(document.querySelector('#slide3'));
 
-  LAppDelegate.getInstance().run();
+  // document.querySelector('navigate-left').addEventListener('click', e => {
+  //   alert('left');
+  // });
+
+  // document.querySelector('navigate-right').addEventListener('click', e => {
+  //   alert('right');
+  // });
+
+  document.querySelector('.reveal').addEventListener('click', e => {
+    const target = e.target as HTMLTextAreaElement;
+
+    // console.log(target.className === 'controls-arrow');
+
+    if (target.className === 'controls-arrow') {
+      // LAppLive2DManager.getInstance().changeScene();
+      LAppLive2DManager.getInstance().nextScene();
+    }
+  });
+
 };
 
 /**
@@ -33,3 +75,5 @@ window.onresize = () => {
     LAppDelegate.getInstance().onResize();
   }
 };
+
+

@@ -222,6 +222,7 @@ export class LAppView {
 
       // 歯車にタップしたか
       if (this._gear.isHit(pointX, pointY)) {
+        //下一個人物
         live2DManager.nextScene();
       }
     }

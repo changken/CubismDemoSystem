@@ -163,6 +163,7 @@ export class LAppLive2DManager {
    * 次のシーンに切りかえる
    * サンプルアプリケーションではモデルセットの切り替えを行う。
    */
+  //下一個場景
   public nextScene(): void {
     const no: number = (this._sceneIndex + 1) % LAppDefine.ModelDirSize;
     this.changeScene(no);

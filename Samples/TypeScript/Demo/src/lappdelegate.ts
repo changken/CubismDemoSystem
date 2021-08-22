@@ -51,7 +51,7 @@ export class LAppDelegate {
   /**
    * APPに必要な物を初期化する。
    */
-  public initialize(): boolean {
+  public initialize(renderDom): boolean {
     // キャンバスの作成
     canvas = document.createElement('canvas');
     if (LAppDefine.CanvasSize === 'auto') {
@@ -69,8 +69,8 @@ export class LAppDelegate {
       alert('Cannot initialize WebGL. This browser does not support.');
       gl = null;
 
-      document.body.innerHTML =
-        'This browser does not support the <code>&lt;canvas&gt;</code> element.';
+      document.body.innerHTML = 'This browser does not support the <code>&lt;canvas&gt;</code> element.';
+      // renderDom.innerHTML = 'This browser does not support the <code>&lt;canvas&gt;</code> element.';
 
       // gl初期化失敗
       return false;
@@ -78,6 +78,16 @@ export class LAppDelegate {
 
     // キャンバスを DOM に追加
     document.body.appendChild(canvas);
+    // if(Array.isArray(renderDom)){
+    //   renderDom.forEach((v) => {
+    //     v.appendChild(canvas);
+    //     console.log(v)
+    //   });
+    // }else{
+    //   renderDom.appendChild(canvas);
+    // }
+    // renderDom.appendChild(canvas);
+
 
     if (!frameBuffer) {
       frameBuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING);
@@ -274,6 +284,7 @@ export class LAppDelegate {
     this._cubismOption.loggingLevel = LAppDefine.CubismLoggingLevel;
     CubismFramework.startUp(this._cubismOption);
 
+    // CubismFramework.dispose();
     // initialize cubism
     CubismFramework.initialize();
 
