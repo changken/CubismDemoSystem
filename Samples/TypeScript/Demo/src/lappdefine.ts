@@ -44,8 +44,12 @@ export const PowerImageName = 'CloseNormal.png';
 // モデル定義---------------------------------------------
 // モデルを配置したディレクトリ名の配列
 // ディレクトリ名とmodel3.jsonの名前を一致させておくこと
+// 模型定義 -----------------------------------------
+// 放置模型的目錄名稱陣列
+// 要匹配目錄名稱和model3.json的名字
 // export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice'];
-export const ModelDir: string[] = ['Haru', 'Hiyori', 'Rice'];
+// export const ModelDir: string[] = ['Haru', 'Hiyori', 'Rice'];
+export const ModelDir: string[] = ['Haru', 'Hiyori', 'Rice', 'Epsilon', 'Haru_normal', 'miku_sample_t04'];
 
 export const ModelDirSize: number = ModelDir.length;
 
