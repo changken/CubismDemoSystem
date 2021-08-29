@@ -26,6 +26,7 @@ export class LAppDelegate {
   /**
    * クラスのインスタンス（シングルトン）を返す。
    * インスタンスが生成されていない場合は内部でインスタンスを生成する。
+   * 單利模式
    *
    * @return クラスのインスタンス
    */
@@ -39,6 +40,7 @@ export class LAppDelegate {
 
   /**
    * クラスのインスタンス（シングルトン）を解放する。
+   * 釋放class
    */
   public static releaseInstance(): void {
     if (s_instance != null) {
@@ -50,10 +52,13 @@ export class LAppDelegate {
 
   /**
    * APPに必要な物を初期化する。
+   * 初始化app
    */
   public initialize(renderDom): boolean {
     // キャンバスの作成
+    //生成canvas
     canvas = document.createElement('canvas');
+    //定義canvas大小
     if (LAppDefine.CanvasSize === 'auto') {
       this._resizeCanvas();
     } else {
@@ -61,10 +66,11 @@ export class LAppDelegate {
       canvas.height = LAppDefine.CanvasSize.height;
     }
 
-    // glコンテキストを初期化
+    // glコンテキストを初期化 初始化webgl
     // @ts-ignore
     gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
+    //初始化webgl失敗所做的邏輯
     if (!gl) {
       alert('Cannot initialize WebGL. This browser does not support.');
       gl = null;
@@ -76,6 +82,7 @@ export class LAppDelegate {
       return false;
     }
 
+    //append canvas
     // キャンバスを DOM に追加
     document.body.appendChild(canvas);
     // if(Array.isArray(renderDom)){
@@ -89,6 +96,7 @@ export class LAppDelegate {
     // renderDom.appendChild(canvas);
 
 
+    //frameBuffer為null的話 就從gl取得資料
     if (!frameBuffer) {
       frameBuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING);
     }
@@ -101,21 +109,25 @@ export class LAppDelegate {
 
     if (supportTouch) {
       // タッチ関連コールバック関数登録
+      //註冊觸摸callback函數
       canvas.ontouchstart = onTouchBegan;
       canvas.ontouchmove = onTouchMoved;
       canvas.ontouchend = onTouchEnded;
       canvas.ontouchcancel = onTouchCancel;
     } else {
       // マウス関連コールバック関数登録
+      //註冊鼠標callback函數
       canvas.onmousedown = onClickBegan;
       canvas.onmousemove = onMouseMoved;
       canvas.onmouseup = onClickEnded;
     }
 
     // AppViewの初期化
+    // appview初始化
     this._view.initialize();
 
     // Cubism SDKの初期化
+    // cubism sdk初始化
     this.initializeCubism();
 
     return true;
@@ -123,6 +135,7 @@ export class LAppDelegate {
 
   /**
    * Resize canvas and re-initialize view.
+   * 縮放canvas和從初始化view
    */
   public onResize(): void {
     this._resizeCanvas();
@@ -132,6 +145,7 @@ export class LAppDelegate {
 
   /**
    * 解放する。
+   * 釋放cubism
    */
   public release(): void {
     this._textureManager.release();
@@ -140,20 +154,22 @@ export class LAppDelegate {
     this._view.release();
     this._view = null;
 
-    // リソースを解放
+    // リソースを解放 釋放instance
     LAppLive2DManager.releaseInstance();
 
-    // Cubism SDKの解放
+    // Cubism SDKの解放 sdk釋放
     CubismFramework.dispose();
   }
 
   /**
    * 実行処理。
+   * 實作處理
    */
   public run(): void {
     // メインループ
     const loop = (): void => {
       // インスタンスの有無の確認
+      //instance是否為null
       if (s_instance == null) {
         return;
       }
@@ -162,15 +178,19 @@ export class LAppDelegate {
       LAppPal.updateTime();
 
       // 画面の初期化
+      //畫面初始化
       gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
       // 深度テストを有効化
+      //深度測試
       gl.enable(gl.DEPTH_TEST);
 
       // 近くにある物体は、遠くにある物体を覆い隠す
+      //近處的物體遮擋遠處的物體
       gl.depthFunc(gl.LEQUAL);
 
       // カラーバッファや深度バッファをクリアする
+      //清除顏色和深度緩衝區
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
       gl.clearDepth(1.0);
@@ -180,9 +200,11 @@ export class LAppDelegate {
       gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
       // 描画更新
+      // 畫布更新
       this._view.render();
 
       // ループのために再帰呼び出し
+      //遞迴調用循環
       requestAnimationFrame(loop);
     };
     loop();
@@ -190,6 +212,7 @@ export class LAppDelegate {
 
   /**
    * シェーダーを登録する。
+   * 註冊著色器
    */
   public createShader(): WebGLProgram {
     // バーテックスシェーダーのコンパイル
@@ -252,6 +275,7 @@ export class LAppDelegate {
 
   /**
    * View情報を取得する。
+   * 取得view資訊
    */
   public getView(): LAppView {
     return this._view;
@@ -263,6 +287,7 @@ export class LAppDelegate {
 
   /**
    * コンストラクタ
+   * constructor
    */
   constructor() {
     this._captured = false;
@@ -277,6 +302,7 @@ export class LAppDelegate {
 
   /**
    * Cubism SDKの初期化
+   * Cubism SDK初始化
    */
   public initializeCubism(): void {
     // setup cubism
@@ -298,6 +324,7 @@ export class LAppDelegate {
 
   /**
    * Resize the canvas to fill the screen.
+   * 為了填滿銀幕而縮放canvas
    */
   private _resizeCanvas(): void {
     canvas.width = window.innerWidth;
@@ -306,15 +333,16 @@ export class LAppDelegate {
 
   _cubismOption: Option; // Cubism SDK Option
   _view: LAppView; // View情報
-  _captured: boolean; // クリックしているか
-  _mouseX: number; // マウスX座標
-  _mouseY: number; // マウスY座標
-  _isEnd: boolean; // APP終了しているか
-  _textureManager: LAppTextureManager; // テクスチャマネージャー
+  _captured: boolean; // クリックしているか //是否點擊
+  _mouseX: number; // マウスX座標 //滑鼠x
+  _mouseY: number; // マウスY座標 //滑鼠y
+  _isEnd: boolean; // APP終了しているか //是否結束
+  _textureManager: LAppTextureManager; // テクスチャマネージャー //紋理管理
 }
 
 /**
  * クリックしたときに呼ばれる。
+ * 點擊時調用
  */
 function onClickBegan(e: MouseEvent): void {
   if (!LAppDelegate.getInstance()._view) {
@@ -331,6 +359,7 @@ function onClickBegan(e: MouseEvent): void {
 
 /**
  * マウスポインタが動いたら呼ばれる。
+ * 當鼠標移動時調用
  */
 function onMouseMoved(e: MouseEvent): void {
   if (!LAppDelegate.getInstance()._captured) {
@@ -351,6 +380,7 @@ function onMouseMoved(e: MouseEvent): void {
 
 /**
  * クリックが終了したら呼ばれる。
+ * 當點擊結束時調用
  */
 function onClickEnded(e: MouseEvent): void {
   LAppDelegate.getInstance()._captured = false;
@@ -368,6 +398,7 @@ function onClickEnded(e: MouseEvent): void {
 
 /**
  * タッチしたときに呼ばれる。
+ * 觸摸開始時調用
  */
 function onTouchBegan(e: TouchEvent): void {
   if (!LAppDelegate.getInstance()._view) {
@@ -385,6 +416,7 @@ function onTouchBegan(e: TouchEvent): void {
 
 /**
  * スワイプすると呼ばれる。
+ * 觸摸移動時調用
  */
 function onTouchMoved(e: TouchEvent): void {
   if (!LAppDelegate.getInstance()._captured) {
@@ -406,6 +438,7 @@ function onTouchMoved(e: TouchEvent): void {
 
 /**
  * タッチが終了したら呼ばれる。
+ * 觸摸結束時調用
  */
 function onTouchEnded(e: TouchEvent): void {
   LAppDelegate.getInstance()._captured = false;
@@ -425,6 +458,7 @@ function onTouchEnded(e: TouchEvent): void {
 
 /**
  * タッチがキャンセルされると呼ばれる。
+ * 觸摸取消時調用
  */
 function onTouchCancel(e: TouchEvent): void {
   LAppDelegate.getInstance()._captured = false;

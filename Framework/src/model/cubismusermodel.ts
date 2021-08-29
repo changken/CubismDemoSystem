@@ -352,7 +352,8 @@ export class CubismUserModel {
     this._accelerationX = 0.0;
     this._accelerationY = 0.0;
     this._accelerationZ = 0.0;
-    this._debugMode = false;
+    //this._debugMode = false;
+    this._debugMode = true;
     this._renderer = null;
 
     // モーションマネージャーを作成
@@ -406,7 +407,7 @@ export class CubismUserModel {
   protected _moc: CubismMoc; // Mocデータ
   protected _model: CubismModel; // Modelインスタンス
 
-  protected _motionManager: CubismMotionManager; // モーション管理
+  protected _motionManager: CubismMotionManager; // モーション管理 //動作管理
   protected _expressionManager: CubismMotionManager; // 表情管理
   protected _eyeBlink: CubismEyeBlink; // 自動まばたき
   protected _breath: CubismBreath; // 呼吸
@@ -426,7 +427,7 @@ export class CubismUserModel {
   protected _accelerationX: number; // X軸方向の加速度
   protected _accelerationY: number; // Y軸方向の加速度
   protected _accelerationZ: number; // Z軸方向の加速度
-  protected _debugMode: boolean; // デバッグモードかどうか
+  protected _debugMode: boolean; // デバッグモードかどうか //是否處於調試模式
 
   private _renderer: CubismRenderer_WebGL; // レンダラ
 }

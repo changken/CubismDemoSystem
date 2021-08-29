@@ -18,6 +18,7 @@ import { TouchManager } from './touchmanager';
 
 /**
  * 描画クラス。
+ * 繪畫
  */
 export class LAppView {
   /**
@@ -96,6 +97,7 @@ export class LAppView {
 
   /**
    * 描画する。
+   * 生成cubism live2d model
    */
   public render(): void {
     gl.useProgram(this._programId);
@@ -129,9 +131,11 @@ export class LAppView {
     let imageName = '';
 
     // 背景画像初期化
+    //背景圖片初始化
     imageName = LAppDefine.BackImageName;
 
     // 非同期なのでコールバック関数を作成
+    //創建回調函數，因為它是異步的
     const initBackGroundTexture = (textureInfo: TextureInfo): void => {
       const x: number = width * 0.5;
       const y: number = height * 0.5;
@@ -148,6 +152,7 @@ export class LAppView {
     );
 
     // 歯車画像初期化
+    //齒輪圖片初始化
     imageName = LAppDefine.GearImageName;
     const initGearTexture = (textureInfo: TextureInfo): void => {
       const x = width - textureInfo.width * 0.5;
@@ -164,6 +169,7 @@ export class LAppView {
     );
 
     // シェーダーを作成
+    //創建著色器
     if (this._programId == null) {
       this._programId = LAppDelegate.getInstance().createShader();
     }
@@ -221,6 +227,7 @@ export class LAppView {
       live2DManager.onTap(x, y);
 
       // 歯車にタップしたか
+      //如果齒輪被點擊
       if (this._gear.isHit(pointX, pointY)) {
         //下一個人物
         live2DManager.nextScene();

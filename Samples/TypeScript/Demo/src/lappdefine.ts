@@ -9,6 +9,7 @@ import { LogLevel } from '@framework/live2dcubismframework';
 
 /**
  * Sample Appで使用する定数
+ * Sample App使用常數
  */
 
 // Canvas width and height pixel values, or dynamic screen size ('auto').
@@ -30,12 +31,15 @@ export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
 // 相対パス
+//模型
 export const ResourcesPath = '../../Resources/';
 
 // モデルの後ろにある背景の画像ファイル
+//背景圖片
 export const BackImageName = 'back_class_normal.png';
 
 // 歯車
+//齒輪
 export const GearImageName = 'icon_gear.png';
 
 // 終了ボタン
@@ -49,13 +53,21 @@ export const PowerImageName = 'CloseNormal.png';
 // 要匹配目錄名稱和model3.json的名字
 // export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice'];
 // export const ModelDir: string[] = ['Haru', 'Hiyori', 'Rice'];
-export const ModelDir: string[] = ['Haru', 'Hiyori', 'Rice', 'Epsilon', 'Haru_normal', 'miku_sample_t04'];
+//after rice is offical website downloaded
+export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice',
+ 'rice_pro_t03', 'mark_free_t04', 'hiyori_pro_t10', 'natori_pro_t06', 'miara_pro_t03',
+ 'miku_sample_t04', 'haru_greeter_t03', 'nito', 'nipsilon', 'ni-j', 'nietzsche', 'nico',
+ 'Gantzert_Felixander', 'tororo', 'hijiki', 'koharu', 'haruto', 
+ 'tsumiki', 'unitychan', 'chitose', 'Epsilon', 'Haru_normal', 
+'wanko_touch', 'izumi_illust', 'sizuku', 'hibiki', 'simple'];
 
 export const ModelDirSize: number = ModelDir.length;
 
+// console.log(ModelDirSize);
+
 // 外部定義ファイル（json）と合わせる
-export const MotionGroupIdle = 'Idle'; // アイドリング
-export const MotionGroupTapBody = 'TapBody'; // 体をタップしたとき
+export const MotionGroupIdle = 'Idle'; // アイドリング idle
+export const MotionGroupTapBody = 'TapBody'; // 体をタップしたとき 輕拍身體時會執行的動作
 
 // 外部定義ファイル（json）と合わせる
 export const HitAreaNameHead = 'Head';
@@ -72,6 +84,7 @@ export const DebugLogEnable = true;
 export const DebugTouchLogEnable = false;
 
 // Frameworkから出力するログのレベル設定
+// Framework日誌輸出的級別設置
 export const CubismLoggingLevel: LogLevel = LogLevel.LogLevel_Verbose;
 
 // デフォルトのレンダーターゲットサイズ
