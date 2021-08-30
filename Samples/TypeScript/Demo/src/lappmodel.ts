@@ -492,9 +492,14 @@ export class LAppModel extends CubismUserModel {
     if (this._motionManager.isFinished()) {
       // モーションの再生がない場合、待機モーションの中からランダムで再生する
       // 如果沒有動作播放，則從待機動作中隨機播放。
+      // this.startRandomMotion(
+      //   LAppDefine.MotionGroupIdle,
+      //   LAppDefine.PriorityIdle
+      // );
+      //從所有動作挑選一個動作隨機撥放
       this.startRandomMotion(
-        LAppDefine.MotionGroupIdle,
-        LAppDefine.PriorityIdle
+        LAppDefine.MotionGroupAll,
+        LAppDefine.PriorityAll
       );
     } else {
       motionUpdated = this._motionManager.updateMotion(

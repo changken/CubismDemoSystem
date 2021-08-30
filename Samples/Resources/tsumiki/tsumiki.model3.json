@@ -51,6 +51,77 @@
 			}
 		],
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/tsumiki_idle_01.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_01.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_01_df.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_02.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_03.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_04.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_05.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_06.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_08.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_09.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_10.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_11.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_12.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_13.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_14.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_15.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_16.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_17.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_18.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_19.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_20.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_21.motion3.json"
+				},
+				{
+				  "File": "motion/tsumiki_m_22.motion3.json"
+				}
+			  ],
 			"Flick3": [
 				{
 					"File": "motion/tsumiki_m_01_df.motion3.json"

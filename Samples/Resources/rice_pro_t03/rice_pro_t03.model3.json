@@ -9,6 +9,20 @@
 		"Physics": "rice_pro_t03.physics3.json",
 		"DisplayInfo": "rice_pro_t03.cdi3.json",
 		"Motions": {
+			"All": [
+				{
+				  "File": "motions/idle.motion3.json"
+				},
+				{
+				  "File": "motions/mtn_01.motion3.json"
+				},
+				{
+				  "File": "motions/mtn_02.motion3.json"
+				},
+				{
+				  "File": "motions/mtn_03.motion3.json"
+				}
+			  ],
 			"Idle": [
 				{
 					"File": "motions/idle.motion3.json"

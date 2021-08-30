@@ -66,6 +66,7 @@ export const ModelDirSize: number = ModelDir.length;
 // console.log(ModelDirSize);
 
 // 外部定義ファイル（json）と合わせる
+export const MotionGroupAll = 'All';
 export const MotionGroupIdle = 'Idle'; // アイドリング idle
 export const MotionGroupTapBody = 'TapBody'; // 体をタップしたとき 輕拍身體時會執行的動作
 
@@ -74,6 +75,7 @@ export const HitAreaNameHead = 'Head';
 export const HitAreaNameBody = 'Body';
 
 // モーションの優先度定数
+export const PriorityAll = 1;
 export const PriorityNone = 0;
 export const PriorityIdle = 1;
 export const PriorityNormal = 2;

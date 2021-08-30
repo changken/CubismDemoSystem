@@ -8,6 +8,41 @@
 		"Physics": "koharu.physics3.json",
 		"DisplayInfo": "koharu.cdi3.json",
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/01.motion3.json"
+				},
+				{
+				  "File": "motion/02.motion3.json"
+				},
+				{
+				  "File": "motion/03.motion3.json"
+				},
+				{
+				  "File": "motion/04.motion3.json"
+				},
+				{
+				  "File": "motion/05.motion3.json"
+				},
+				{
+				  "File": "motion/06.motion3.json"
+				},
+				{
+				  "File": "motion/07.motion3.json"
+				},
+				{
+				  "File": "motion/08.motion3.json"
+				},
+				{
+				  "File": "motion/09.motion3.json"
+				},
+				{
+				  "File": "motion/idle.motion3.json"
+				},
+				{
+				  "File": "motion/idle_02.motion3.json"
+				}
+			  ],
 			"Tap": [
 				{
 					"File": "motion/01.motion3.json"

@@ -39,6 +39,20 @@
 			}
 		],
 		"Motions": {
+			"All": [
+				{
+					"File": "motion/chitose_idle.motion3.json"
+				},
+				{
+					"File": "motion/chitose_handwave.motion3.json"
+				},
+				{
+					"File": "motion/chitose_kime01.motion3.json"
+				},
+				{
+					"File": "motion/chitose_kime02.motion3.json"
+				}
+			],
 			"Flick": [
 				{
 					"File": "motion/chitose_handwave.motion3.json"

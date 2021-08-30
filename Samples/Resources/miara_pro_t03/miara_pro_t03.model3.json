@@ -8,6 +8,17 @@
 		"Physics": "miara_pro_t03.physics3.json",
 		"DisplayInfo": "miara_pro_t03.cdi3.json",
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/Scene1.motion3.json"
+				},
+				{
+				  "File": "motion/Scene2.motion3.json"
+				},
+				{
+				  "File": "motion/Scene3.motion3.json"
+				}
+			  ],
 			"Idle": [
 				{
 					"File": "motion/Scene1.motion3.json"

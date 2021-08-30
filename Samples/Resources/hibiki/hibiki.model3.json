@@ -34,6 +34,23 @@
 			}
 		],
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/hibiki_01.motion3.json"
+				},
+				{
+				  "File": "motion/hibiki_02.motion3.json"
+				},
+				{
+				  "File": "motion/hibiki_03.motion3.json"
+				},
+				{
+				  "File": "motion/hibiki_04.motion3.json"
+				},
+				{
+				  "File": "motion/hibiki_05.motion3.json"
+				}
+			  ],
 			"Idle": [
 				{
 					"File": "motion/hibiki_01.motion3.json",

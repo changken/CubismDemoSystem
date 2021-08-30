@@ -8,6 +8,32 @@
 		"Physics": "miku_sample_t04.physics3.json",
 		"DisplayInfo": "miku_sample_t04.cdi3.json",
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/miku_01.motion3.json"
+				},
+				{
+				  "File": "motion/miku_02.motion3.json"
+				},
+				{
+				  "File": "motion/miku_03.motion3.json"
+				},
+				{
+				  "File": "motion/miku_04.motion3.json"
+				},
+				{
+				  "File": "motion/miku_05.motion3.json"
+				},
+				{
+				  "File": "motion/miku_06.motion3.json"
+				},
+				{
+				  "File": "motion/miku_07.motion3.json"
+				},
+				{
+				  "File": "motion/miku_08.motion3.json"
+				}
+			  ],
 			"Idle": [
 				{
 					"File": "motion/miku_01.motion3.json"

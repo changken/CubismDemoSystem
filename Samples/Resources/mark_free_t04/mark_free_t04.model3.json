@@ -8,6 +8,26 @@
 		"Physics": "mark_free_t04.physics3.json",
 		"DisplayInfo": "mark_free_t04.cdi3.json",
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/mark_m01.motion3.json"
+				},
+				{
+				  "File": "motion/mark_m02.motion3.json"
+				},
+				{
+				  "File": "motion/mark_m03.motion3.json"
+				},
+				{
+				  "File": "motion/mark_m04.motion3.json"
+				},
+				{
+				  "File": "motion/mark_m05.motion3.json"
+				},
+				{
+				  "File": "motion/mark_m06.motion3.json"
+				}
+			  ],
 			"Idle": [
 				{
 					"File": "motion/mark_m01.motion3.json"

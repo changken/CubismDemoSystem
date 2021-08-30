@@ -41,6 +41,38 @@
 			}
 		],
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/izumi_01.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_02.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_03.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_04.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_05.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_06.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_07.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_08.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_09.motion3.json"
+				},
+				{
+				  "File": "motion/izumi_10.motion3.json"
+				}
+			  ],
 			"FlickRight": [
 				{
 					"File": "motion/izumi_01.motion3.json",

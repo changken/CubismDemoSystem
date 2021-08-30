@@ -9,6 +9,35 @@
 		"Pose": "tororo.pose3.json",
 		"DisplayInfo": "tororo.cdi3.json",
 		"Motions": {
+			"All": [
+				{
+				  "File": "motion/00_idle.motion3.json"
+				},
+				{
+				  "File": "motion/01.motion3.json"
+				},
+				{
+				  "File": "motion/02.motion3.json"
+				},
+				{
+				  "File": "motion/03.motion3.json"
+				},
+				{
+				  "File": "motion/04.motion3.json"
+				},
+				{
+				  "File": "motion/05.motion3.json"
+				},
+				{
+				  "File": "motion/06.motion3.json"
+				},
+				{
+				  "File": "motion/07.motion3.json"
+				},
+				{
+				  "File": "motion/08.motion3.json"
+				}
+			  ],
 			"Idle": [
 				{
 					"File": "motion/00_idle.motion3.json"
