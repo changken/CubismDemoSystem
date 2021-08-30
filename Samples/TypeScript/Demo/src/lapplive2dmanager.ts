@@ -154,6 +154,9 @@ export class LAppLive2DManager {
         }
       }
 
+      // x軸相對移動 0~1之間
+      projection.translateX(0.5);
+
       model.update();
       model.draw(projection); // 参照渡しなのでprojectionは変質する。
     }
