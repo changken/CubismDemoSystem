@@ -168,6 +168,16 @@ export class LAppDelegate {
   public run(): void {
     // メインループ
     const loop = (): void => {
+
+      // mouth
+      let rangeEl = document.querySelector('input[type=range]') as HTMLInputElement;
+
+      let rangeValue = parseInt(rangeEl.value);
+      //先傳到lapp delegate的view的參數
+      LAppDelegate.getInstance()._view.mouthX = 0;
+      LAppDelegate.getInstance()._view.mouthY = rangeValue / 100;
+      console.log(rangeValue);
+
       // インスタンスの有無の確認
       //instance是否為null
       if (s_instance == null) {

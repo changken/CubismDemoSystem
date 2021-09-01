@@ -508,6 +508,14 @@ export class LAppModel extends CubismUserModel {
       ); // モーションを更新 //更新動作
     }
     this._model.saveParameters(); // 状態を保存 //保存狀態
+    
+    //再將model to 實際設定嘴巴參數
+    console.log('lappmodel: mouthX: ' + this.mouthX);
+    console.log('lappmodel: mouthY: ' + this.mouthY);
+
+    this._model.setParameterValueById(this._idParamMouthOpenY, this.mouthY);
+    this._model.setParameterValueById(this._idParamMouthForm, this.mouthX);
+
     //--------------------------------------------------------------------------
 
     // まばたき
@@ -921,6 +929,14 @@ export class LAppModel extends CubismUserModel {
       CubismDefaultParameterId.ParamBodyAngleX
     );
 
+    this._idParamMouthOpenY = CubismFramework.getIdManager().getId(
+      CubismDefaultParameterId.ParamMouthOpenY
+    );
+
+    this._idParamMouthForm = CubismFramework.getIdManager().getId(
+      CubismDefaultParameterId.ParamMouthForm
+    );
+
     this._state = LoadStep.LoadAssets;
     this._expressionCount = 0;
     this._textureCount = 0;
@@ -949,6 +965,8 @@ export class LAppModel extends CubismUserModel {
   _idParamEyeBallX: CubismIdHandle; // パラメータID: ParamEyeBallX
   _idParamEyeBallY: CubismIdHandle; // パラメータID: ParamEyeBAllY
   _idParamBodyAngleX: CubismIdHandle; // パラメータID: ParamBodyAngleX
+  _idParamMouthOpenY: CubismIdHandle;
+  _idParamMouthForm: CubismIdHandle;
 
   _state: number; // 現在のステータス管理用 //用於當前狀態管理
   _expressionCount: number; // 表情データカウント
@@ -956,4 +974,7 @@ export class LAppModel extends CubismUserModel {
   _motionCount: number; // モーションデータカウント
   _allMotionCount: number; // モーション総数
   _wavFileHandler: LAppWavFileHandler; //wavファイルハンドラ
+
+  public mouthX: number = 0;
+  public mouthY: number = 0;
 }

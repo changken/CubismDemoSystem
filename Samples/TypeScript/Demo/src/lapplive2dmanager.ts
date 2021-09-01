@@ -139,6 +139,10 @@ export class LAppLive2DManager {
     for (let i = 0; i < modelCount; ++i) {
       const model: LAppModel = this.getModel(i);
 
+      // 再從live2d manager to lapp model
+      model.mouthX = this.mouthX;
+      model.mouthY = this.mouthY;
+
       if (model.getModel()) {
         if (model.getModel().getCanvasWidth() > 1.0 && width < height) {
           // 横に長いモデルを縦長ウィンドウに表示する際モデルの横サイズでscaleを算出する
@@ -219,4 +223,6 @@ export class LAppLive2DManager {
     LAppPal.printMessage('Motion Finished:');
     console.log(self);
   };
+  public mouthX: number;
+  public mouthY: number;
 }

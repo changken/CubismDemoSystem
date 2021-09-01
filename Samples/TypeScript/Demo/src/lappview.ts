@@ -115,6 +115,10 @@ export class LAppView {
 
     live2DManager.setViewMatrix(this._viewMatrix);
 
+    // view的參數再傳到live2d manager
+    live2DManager.mouthX = this.mouthX;
+    live2DManager.mouthY = this.mouthY;
+
     live2DManager.onUpdate();
   }
 
@@ -280,4 +284,6 @@ export class LAppView {
   _gear: LAppSprite; // ギア画像
   _changeModel: boolean; // モデル切り替えフラグ
   _isClick: boolean; // クリック中
+  public mouthX: number;
+  public mouthY: number;
 }
