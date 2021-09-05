@@ -8,6 +8,7 @@
 import { LAppDelegate } from './lappdelegate';
 import * as LAppDefine from './lappdefine';
 import { LAppLive2DManager } from './lapplive2dmanager';
+import { renderMotions, selectMotion } from './components/render';
 
 // const lAppDelegates = [];
 
@@ -60,6 +61,9 @@ window.onload = (): void => {
     }
   });
 
+  renderMotions();
+
+  selectMotion(1);
 };
 
 /**

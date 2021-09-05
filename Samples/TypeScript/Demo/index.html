@@ -12,9 +12,9 @@
       overflow: hidden;
     }
   </style>
-  <link rel="stylesheet" href="dist/reset.css">
-  <link rel="stylesheet" href="dist/reveal.css">
-  <link rel="stylesheet" href="dist/theme/black.css">
+  <link rel="stylesheet" href="vender/reveal/reset.css">
+  <link rel="stylesheet" href="vender/reveal/reveal.css">
+  <link rel="stylesheet" href="vender/reveal/theme/black.css">
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -25,10 +25,30 @@
   <!-- Build script -->
   <script src="./dist/bundle.js"></script>
   <style>
+    ul, ol{
+      list-style: none;
+      margin-left: 0;
+    }
     .reveal {
       width: 50%;
       position: absolute;
       top: 20px;
+    }
+    #motions{
+      position: absolute;
+      bottom: 0;
+      left:17%;
+    }
+
+    #motions li{
+      background: #000;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    #motions li.selected{
+      background: #f00;
     }
   </style>
 </head>
@@ -72,8 +92,9 @@
       <section id="slide32">幻燈片 32</section>
     </div>
   </div>
+  <ul id="motions"></ul>
   <!-- reveal.js-->
-  <script src="dist/reveal.js"></script>
+  <script src="vender/reveal/reveal.js"></script>
   <!-- <script src="plugin/notes/notes.js"></script>
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script> -->

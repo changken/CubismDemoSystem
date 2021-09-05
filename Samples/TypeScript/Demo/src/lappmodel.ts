@@ -39,6 +39,7 @@ import { canvas, frameBuffer, gl, LAppDelegate } from './lappdelegate';
 import { LAppPal } from './lapppal';
 import { TextureInfo } from './lapptexturemanager';
 import { LAppWavFileHandler } from './lappwavfilehandler';
+import { renderMotions, selectMotion } from './components/render';
 
 enum LoadStep {
   LoadAssets,
@@ -664,6 +665,12 @@ export class LAppModel extends CubismUserModel {
     if (this._debugMode) {
       LAppPal.printMessage(`[APP]start motion: [${group}_${no}`);
     }
+
+    //選取指定動作
+    if(this._debugMode && group === 'All'){
+      selectMotion(no, this.motions);
+    }
+
     //做動作
     return this._motionManager.startMotionPriority(
       motion,
@@ -787,6 +794,9 @@ export class LAppModel extends CubismUserModel {
    * @todo
    */
   public preLoadMotionGroup(group: string): void {
+
+    let motions:string[] = [];
+
     //加載所有動作
     for (let i = 0; i < this._modelSetting.getMotionCount(group); i++) {
       //動作檔案
@@ -798,6 +808,11 @@ export class LAppModel extends CubismUserModel {
         LAppPal.printMessage(
           `[APP]load motion: ${motionFileName} => [${name}]`
         );
+      }
+
+      if(group === 'All'){
+        let motionName = motionFileName.split("/")[1].split(".")[0];
+        motions.push(motionName);
       }
 
       fetch(`${this._modelHomeDir}${motionFileName}`)
@@ -842,6 +857,11 @@ export class LAppModel extends CubismUserModel {
             this.getRenderer().startUp(gl);
           }
         });
+    }
+
+    if(this._debugMode && group === 'All'){
+      renderMotions(motions);
+      this.motions = motions;
     }
   }
 
@@ -977,4 +997,5 @@ export class LAppModel extends CubismUserModel {
 
   public mouthX: number = 0;
   public mouthY: number = 0;
+  motions: string[] = [];
 }
