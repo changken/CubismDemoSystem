@@ -54,7 +54,7 @@ export class LAppDelegate {
    * APPに必要な物を初期化する。
    * 初始化app
    */
-  public initialize(renderDom): boolean {
+  public initialize(): boolean {
     // キャンバスの作成
     //生成canvas
     canvas = document.createElement('canvas');
@@ -217,6 +217,65 @@ export class LAppDelegate {
       //遞迴調用循環
       requestAnimationFrame(loop);
     };
+    loop();
+  }
+
+  /**
+   * runModel
+   * 
+   * @author changken
+   */
+  public runModel(positionX:number, scale:number) {
+    const loop = ():void=>{
+      // mouth
+      let rangeEl = document.querySelector('input[type=range]') as HTMLInputElement;
+
+      let rangeValue = parseInt(rangeEl.value);
+      //先傳到lapp delegate的view的參數
+      LAppDelegate.getInstance()._view.mouthX = 0;
+      LAppDelegate.getInstance()._view.mouthY = rangeValue / 100;
+      //console.log(rangeValue);
+
+      // インスタンスの有無の確認
+      //instance是否為null
+      if (s_instance == null) {
+        return;
+      }
+
+      // 時間更新
+      LAppPal.updateTime();
+
+      // 画面の初期化
+      //畫面初始化
+      gl.clearColor(0.0, 0.0, 0.0, 1.0);
+
+      // 深度テストを有効化
+      //深度測試
+      gl.enable(gl.DEPTH_TEST);
+
+      // 近くにある物体は、遠くにある物体を覆い隠す
+      //近處的物體遮擋遠處的物體
+      gl.depthFunc(gl.LEQUAL);
+
+      // カラーバッファや深度バッファをクリアする
+      //清除顏色和深度緩衝區
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+      gl.clearDepth(1.0);
+
+      // 透過設定
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+      // 描画更新
+      // 畫布更新
+      this._view.renderModel(positionX, scale);
+    
+      // 取消recursive
+      cancelAnimationFrame(0);
+      //開斯! 再來個recursive
+      requestAnimationFrame(loop);
+    }
     loop();
   }
 

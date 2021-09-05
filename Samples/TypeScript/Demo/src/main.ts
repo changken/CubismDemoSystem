@@ -8,7 +8,7 @@
 import { LAppDelegate } from './lappdelegate';
 import * as LAppDefine from './lappdefine';
 import { LAppLive2DManager } from './lapplive2dmanager';
-import { renderMotions, selectMotion } from './components/render';
+import { modelControl } from './components/modelControl';
 
 // const lAppDelegates = [];
 
@@ -24,9 +24,9 @@ import { renderMotions, selectMotion } from './components/render';
 
 //   lAppDelegates[lAppDelegates.length - 1].run();
 // }
-const renderCubismModel = (renderDom) => {
+const renderCubismModel = () => {
   // create the application instance
-  if (LAppDelegate.getInstance().initialize(renderDom) == false) {
+  if (LAppDelegate.getInstance().initialize() == false) {
     return;
   }
 
@@ -38,7 +38,7 @@ const renderCubismModel = (renderDom) => {
  */
 window.onload = (): void => {
   //renderCubismModel([document.querySelector('#slide1'), document.querySelector('#slide2'), document.querySelector('#slide3')]);
-  renderCubismModel(document.querySelector('#slide1'));
+  renderCubismModel();
   //renderCubismModel(document.querySelector('#slide2'));
   //renderCubismModel(document.querySelector('#slide3'));
 
@@ -68,6 +68,8 @@ window.onload = (): void => {
 
   // selectMotion(1);
 };
+
+(window as any).modelControl = modelControl;
 
 window.onhashchange = () => {
   changeCharacter();

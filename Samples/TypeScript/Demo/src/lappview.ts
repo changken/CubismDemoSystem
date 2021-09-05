@@ -123,6 +123,37 @@ export class LAppView {
   }
 
   /**
+   * renderModel
+   * 
+   * @author changken
+   * 
+   * 描画する。
+   * 生成cubism live2d model
+   */
+   public renderModel(positionX:number, scale:number): void {
+    gl.useProgram(this._programId);
+
+    if (this._back) {
+      this._back.render(this._programId);
+    }
+    if (this._gear) {
+      this._gear.render(this._programId);
+    }
+
+    gl.flush();
+
+    const live2DManager: LAppLive2DManager = LAppLive2DManager.getInstance();
+
+    live2DManager.setViewMatrix(this._viewMatrix);
+
+    // view的參數再傳到live2d manager
+    live2DManager.mouthX = this.mouthX;
+    live2DManager.mouthY = this.mouthY;
+
+    live2DManager.updateModel(positionX, scale);
+  }
+
+  /**
    * 画像の初期化を行う。
    */
   public initializeSprite(): void {

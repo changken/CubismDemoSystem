@@ -129,6 +129,8 @@ export class LAppLive2DManager {
   /**
    * 画面を更新するときの処理
    * モデルの更新処理及び描画処理を行う
+   * 更新畫面時的處理
+   * 執行模型更新處理和繪圖處理
    */
   public onUpdate(): void {
     const { width, height } = canvas;
@@ -146,6 +148,7 @@ export class LAppLive2DManager {
       if (model.getModel()) {
         if (model.getModel().getCanvasWidth() > 1.0 && width < height) {
           // 横に長いモデルを縦長ウィンドウに表示する際モデルの横サイズでscaleを算出する
+          //在垂直長窗口中顯示水平長模型時，根據模型的水平尺寸計算比例。
           model.getModelMatrix().setWidth(2.0);
           projection.scale(1.0, width / height);
         } else {
@@ -153,6 +156,7 @@ export class LAppLive2DManager {
         }
 
         // 必要があればここで乗算
+        //如果需要，在這裡乘以
         if (this._viewMatrix != null) {
           projection.multiplyByMatrix(this._viewMatrix);
         }
@@ -160,6 +164,59 @@ export class LAppLive2DManager {
 
       // x軸相對移動 0~1之間
       projection.translateX(0.5);
+
+      model.update();
+      model.draw(projection); // 参照渡しなのでprojectionは変質する。
+    }
+  }
+
+  /**
+   * updateModel
+   * 
+   * @author changken
+   * 
+   * 画面を更新するときの処理
+   * モデルの更新処理及び描画処理を行う
+   * 
+   * 更新畫面時的處理
+   * 執行模型更新處理和繪圖處理
+   */
+   public updateModel(positionX:number, scale: number): void {
+    const { width, height } = canvas;
+
+    const projection: CubismMatrix44 = new CubismMatrix44();
+    const modelCount: number = this._models.getSize();
+
+    for (let i = 0; i < modelCount; ++i) {
+      const model: LAppModel = this.getModel(i);
+
+      // 再從live2d manager to lapp model
+      model.mouthX = this.mouthX;
+      model.mouthY = this.mouthY;
+
+      if (model.getModel()) {
+        if (model.getModel().getCanvasWidth() > 1.0 && width < height) {
+          // 横に長いモデルを縦長ウィンドウに表示する際モデルの横サイズでscaleを算出する
+          //在垂直長窗口中顯示水平長模型時，根據模型的水平尺寸計算比例。
+          model.getModelMatrix().setWidth(2.0);
+          projection.scale(1.0, width / height);
+        } else {
+          projection.scale(height / width, 1.0);
+        }
+
+        // 必要があればここで乗算
+        //如果需要，在這裡乘以
+        if (this._viewMatrix != null) {
+          projection.multiplyByMatrix(this._viewMatrix);
+        }
+      }
+
+      // x軸相對移動 0~1之間
+      // projection.translateX(0.5);
+      projection.translateX(positionX);
+
+      //放大縮小 1~10
+      projection.scaleRelative(scale, scale);
 
       model.update();
       model.draw(projection); // 参照渡しなのでprojectionは変質する。
