@@ -176,7 +176,7 @@ export class LAppDelegate {
       //先傳到lapp delegate的view的參數
       LAppDelegate.getInstance()._view.mouthX = 0;
       LAppDelegate.getInstance()._view.mouthY = rangeValue / 100;
-      console.log(rangeValue);
+      //console.log(rangeValue);
 
       // インスタンスの有無の確認
       //instance是否為null

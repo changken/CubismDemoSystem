@@ -1,0 +1,249 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "congyu.moc3",
+    "Textures": [
+      "congyu.4096/texture_00.png"
+    ],
+    "Physics": "congyu.physics3.json",
+    "Pose": "congyu.pose3.json",
+    "Motions": {
+      "All": [
+        {
+          "File": "motion/mtn_00.motion3.json"
+        },
+        {
+          "File": "motion/mtn_01.motion3.json"
+        },
+        {
+          "File": "motion/mtn_02.motion3.json"
+        },
+        {
+          "File": "motion/mtn_03.motion3.json"
+        },
+        {
+          "File": "motion/mtn_04.motion3.json"
+        },
+        {
+          "File": "motion/mtn_05.motion3.json"
+        },
+        {
+          "File": "motion/mtn_06.motion3.json"
+        },
+        {
+          "File": "motion/mtn_07.motion3.json"
+        },
+        {
+          "File": "motion/mtn_08.motion3.json"
+        },
+        {
+          "File": "motion/mtn_09.motion3.json"
+        },
+        {
+          "File": "motion/mtn_10.motion3.json"
+        }
+      ],
+      "Idle": [
+        {
+          "File": "motion/mtn_04.motion3.json"
+        },
+        {
+          "File": "motion/mtn_00.motion3.json"
+        },
+        {
+          "File": "motion/mtn_05.motion3.json"
+        },
+        {
+          "File": "motion/mtn_01.motion3.json"
+        },
+        {
+          "File": "motion/mtn_06.motion3.json"
+        }
+      ],
+      "Tap_head": [
+        {
+          "File": "motion/mtn_08.motion3.json",
+          "Text": "被摸头啦~，好开心！"
+        },
+        {
+          "File": "motion/mtn_04.motion3.json",
+          "Text": "亲密度+1",
+          "Intimacy": {
+            "Bonus": 1
+          }
+        },
+        {
+          "File": "motion/mtn_05.motion3.json",
+          "Text": "亲密度+1",
+          "Intimacy": {
+            "Bonus": 1
+          }
+        },
+        {
+          "File": "motion/mtn_06.motion3.json",
+          "Text": "亲密度+1",
+          "Intimacy": {
+            "Bonus": 1
+          }
+        }
+      ],
+      "Tap_body": [
+        {
+          "File": "motion/mtn_09.motion3.json",
+          "Text": "哎嘿嘿~，主人这么喜欢吾辈，吾辈很开心！"
+        }
+      ],
+      "hit_body": [
+        {
+          "File": "motion/mtn_07.motion3.json",
+          "Text": "吾辈想一直保护和对待这样的主人"
+        },
+        {
+          "File": "motion/mtn_02.motion3.json",
+          "Text": "真拿主人没办法呢~"
+        }
+      ],
+      "hit_head": [
+        {
+          "File": "motion/mtn_03.motion3.json",
+          "Text": "当前亲密度是：{$intimacy}"
+        },
+        {
+          "File": "motion/mtn_10.motion3.json",
+          "Text": "当前时间：{$datenow} {$timenow}"
+        }
+      ],
+      "hit_hand": [
+        {
+          "File": "motion/mtn_10.motion3.json",
+          "Text": "吾辈帮主人打开了浏览器哦~",
+          "Command": "open_url https://www.baidu.com"
+        }
+      ]
+    },
+    "Expressions": [
+      {
+        "Name": "exp_00.exp3.json",
+        "File": "exp/exp_00.exp3.json"
+      },
+      {
+        "Name": "exp_01.exp3.json",
+        "File": "exp/exp_01.exp3.json"
+      },
+      {
+        "Name": "exp_02.exp3.json",
+        "File": "exp/exp_02.exp3.json"
+      },
+      {
+        "Name": "exp_03.exp3.json",
+        "File": "exp/exp_03.exp3.json"
+      },
+      {
+        "Name": "exp_04.exp3.json",
+        "File": "exp/exp_04.exp3.json"
+      },
+      {
+        "Name": "exp_05.exp3.json",
+        "File": "exp/exp_05.exp3.json"
+      },
+      {
+        "Name": "exp_06.exp3.json",
+        "File": "exp/exp_06.exp3.json"
+      },
+      {
+        "Name": "exp_07.exp3.json",
+        "File": "exp/exp_07.exp3.json"
+      },
+      {
+        "Name": "exp_08.exp3.json",
+        "File": "exp/exp_08.exp3.json"
+      },
+      {
+        "Name": "exp_09.exp3.json",
+        "File": "exp/exp_09.exp3.json"
+      },
+      {
+        "Name": "exp_10.exp3.json",
+        "File": "exp/exp_10.exp3.json"
+      },
+      {
+        "Name": "exp_11.exp3.json",
+        "File": "exp/exp_11.exp3.json"
+      },
+      {
+        "Name": "exp_12.exp3.json",
+        "File": "exp/exp_12.exp3.json"
+      },
+      {
+        "Name": "exp_13.exp3.json",
+        "File": "exp/exp_13.exp3.json"
+      },
+      {
+        "Name": "exp_14.exp3.json",
+        "File": "exp/exp_14.exp3.json"
+      },
+      {
+        "Name": "exp_15.exp3.json",
+        "File": "exp/exp_15.exp3.json"
+      }
+    ]
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Text": ""
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Text": ""
+    }
+  ],
+  "HitAreas": [
+    {
+      "Name": "head",
+      "Id": "HitArea",
+      "Motion": "hit_head"
+    },
+    {
+      "Name": "body",
+      "Id": "HitArea2",
+      "Motion": "hit_body"
+    },
+    {
+      "Name": "hand",
+      "Id": "HitArea3",
+      "Motion": "hit_hand"
+    }
+  ],
+  "HitParams": [
+    {
+      "Name": "head",
+      "Id": "ParamHairFront",
+      "HitArea": "head",
+      "Axis": 0,
+      "Factor": 0.01,
+      "ReleaseType": 0,
+      "Type": 1,
+      "EndMtn": "Tap_head"
+    },
+    {
+      "Name": "body",
+      "Id": "Param4",
+      "HitArea": "body",
+      "Axis": 1,
+      "Factor": 0.01,
+      "ReleaseType": 0,
+      "Type": 0,
+      "EndMtn": "Tap_body"
+    }
+  ],
+  "IntimacyParam": {
+    "InitValue": 1,
+    "MinValue": 0,
+    "MaxValue": 999,
+    "BonusActive": 1
+  },
+  "FaceParam": {}
+}

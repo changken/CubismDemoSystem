@@ -50,21 +50,37 @@ window.onload = (): void => {
   //   alert('right');
   // });
 
+  //initialize
+  if(LAppDefine.displayMode)
+    changeCharacter();
+
   document.querySelector('.reveal').addEventListener('click', e => {
     const target = e.target as HTMLTextAreaElement;
 
     // console.log(target.className === 'controls-arrow');
 
     if (target.className === 'controls-arrow') {
-      // LAppLive2DManager.getInstance().changeScene();
-      LAppLive2DManager.getInstance().nextScene();
+      changeCharacter();
     }
   });
 
-  renderMotions();
+  // renderMotions();
 
-  selectMotion(1);
+  // selectMotion(1);
 };
+
+window.onhashchange = () => {
+  changeCharacter();
+}
+
+const changeCharacter = () => {
+  if(LAppDefine.displayMode){ 
+    const no:number = parseInt(location.hash.split("#/")[1]);
+    LAppLive2DManager.getInstance().changeScene(no);
+  }else{
+    LAppLive2DManager.getInstance().nextScene();
+  }
+}
 
 /**
  * 終了時の処理

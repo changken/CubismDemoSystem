@@ -511,8 +511,8 @@ export class LAppModel extends CubismUserModel {
     this._model.saveParameters(); // 状態を保存 //保存狀態
     
     //再將model to 實際設定嘴巴參數
-    console.log('lappmodel: mouthX: ' + this.mouthX);
-    console.log('lappmodel: mouthY: ' + this.mouthY);
+    //console.log('lappmodel: mouthX: ' + this.mouthX);
+    //console.log('lappmodel: mouthY: ' + this.mouthY);
 
     this._model.setParameterValueById(this._idParamMouthOpenY, this.mouthY);
     this._model.setParameterValueById(this._idParamMouthForm, this.mouthX);
@@ -666,8 +666,8 @@ export class LAppModel extends CubismUserModel {
       LAppPal.printMessage(`[APP]start motion: [${group}_${no}`);
     }
 
-    //選取指定動作
-    if(this._debugMode && group === 'All'){
+    //如果位處於展示模式 則選取指定動作
+    if(LAppDefine.displayMode && group === 'All'){
       selectMotion(no, this.motions);
     }
 
@@ -795,6 +795,7 @@ export class LAppModel extends CubismUserModel {
    */
   public preLoadMotionGroup(group: string): void {
 
+    //蒐集動作陣列
     let motions:string[] = [];
 
     //加載所有動作
@@ -810,6 +811,7 @@ export class LAppModel extends CubismUserModel {
         );
       }
 
+      //append每個動作到動作陣列
       if(group === 'All'){
         let motionName = motionFileName.split("/")[1].split(".")[0];
         motions.push(motionName);
@@ -859,7 +861,8 @@ export class LAppModel extends CubismUserModel {
         });
     }
 
-    if(this._debugMode && group === 'All'){
+    //如果在展示模式下則顯示動作
+    if(LAppDefine.displayMode && group === 'All'){
       renderMotions(motions);
       this.motions = motions;
     }

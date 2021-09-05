@@ -1,0 +1,273 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroupAngle",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "ParamGroupAngle",
+			"Name": "Angle Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroupAngle",
+			"Name": "Angle Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroupFacial",
+			"Name": "Eye L Open"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroupFacial",
+			"Name": "Eye R Open"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroupFacial",
+			"Name": "Eyeball X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroupFacial",
+			"Name": "Eyeball Y"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "ParamGroupFacial",
+			"Name": "Eyebrow L Y"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "ParamGroupFacial",
+			"Name": "Eyebrow R Y"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "ParamGroupFacial",
+			"Name": "Mouth Open"
+		},
+		{
+			"Id": "ParamArmL",
+			"GroupId": "ParamGroupBody",
+			"Name": "Arm L"
+		},
+		{
+			"Id": "ParamArmR",
+			"GroupId": "ParamGroupBody",
+			"Name": "Arm R"
+		},
+		{
+			"Id": "ParamLeftLeg",
+			"GroupId": "ParamGroupBody",
+			"Name": "Leg L"
+		},
+		{
+			"Id": "ParamRightLeg",
+			"GroupId": "ParamGroupBody",
+			"Name": "Leg R"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "ParamGroupBody",
+			"Name": "Body Rotation X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "ParamGroupBody",
+			"Name": "Body Rotation Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "ParamGroupBody",
+			"Name": "Body Rotation Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "ParamGroupBody",
+			"Name": "Breath"
+		},
+		{
+			"Id": "ParamBodyTransform",
+			"GroupId": "ParamGroupBody",
+			"Name": "Body Transform"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "ParamGroupHair",
+			"Name": "Hair Move Front"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "ParamGroupHair",
+			"Name": "Hair Move Side"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "ParamGroupHair",
+			"Name": "Hair Move Back"
+		},
+		{
+			"Id": "ParamPositionX",
+			"GroupId": "ParamGroupAll",
+			"Name": "Overall position X"
+		},
+		{
+			"Id": "ParamPositionY",
+			"GroupId": "ParamGroupAll",
+			"Name": "Overall position Y"
+		},
+		{
+			"Id": "ParamLine1",
+			"GroupId": "ParamGroupEffects",
+			"Name": "Body Blur Line"
+		},
+		{
+			"Id": "ParamLine2",
+			"GroupId": "ParamGroupEffects",
+			"Name": "Eye Blur Line"
+		},
+		{
+			"Id": "ParamGrass",
+			"GroupId": "ParamGroupGrass",
+			"Name": "Grass"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroupAngle",
+			"GroupId": "",
+			"Name": "Angle"
+		},
+		{
+			"Id": "ParamGroupFacial",
+			"GroupId": "",
+			"Name": "Facial Expression"
+		},
+		{
+			"Id": "ParamGroupBody",
+			"GroupId": "",
+			"Name": "All"
+		},
+		{
+			"Id": "ParamGroupHair",
+			"GroupId": "",
+			"Name": "Hair Move"
+		},
+		{
+			"Id": "ParamGroupAll",
+			"GroupId": "",
+			"Name": "Character Transform"
+		},
+		{
+			"Id": "ParamGroupEffects",
+			"GroupId": "",
+			"Name": "Blur Line"
+		},
+		{
+			"Id": "ParamGroupGrass",
+			"GroupId": "",
+			"Name": "Grass"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part4",
+			"Name": "Blur line"
+		},
+		{
+			"Id": "Part5",
+			"Name": "Grass"
+		},
+		{
+			"Id": "PartHead",
+			"Name": "Head"
+		},
+		{
+			"Id": "PartBody",
+			"Name": "Body"
+		},
+		{
+			"Id": "PartArmL",
+			"Name": "Arm L"
+		},
+		{
+			"Id": "PartArmR",
+			"Name": "Arm R"
+		},
+		{
+			"Id": "PartHairBack",
+			"Name": "Hair Back"
+		},
+		{
+			"Id": "Part",
+			"Name": "Core"
+		},
+		{
+			"Id": "PartHairFront",
+			"Name": "Hair Front"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Eyebrow R"
+		},
+		{
+			"Id": "Part3",
+			"Name": "Eyebrow L"
+		},
+		{
+			"Id": "PartEyeL",
+			"Name": "Eye L"
+		},
+		{
+			"Id": "PartEyeR",
+			"Name": "Eye R"
+		},
+		{
+			"Id": "PartHairSide",
+			"Name": "Side Hair"
+		},
+		{
+			"Id": "PartMouth",
+			"Name": "Oral"
+		},
+		{
+			"Id": "PartFace",
+			"Name": "Face"
+		},
+		{
+			"Id": "PartEyeBallL",
+			"Name": "Eyeball L"
+		},
+		{
+			"Id": "PartEyeWhiteL",
+			"Name": "White Eye L"
+		},
+		{
+			"Id": "PartEyeBallR",
+			"Name": "Eyeball R"
+		},
+		{
+			"Id": "PartEyeWhiteR",
+			"Name": "White Eye R"
+		},
+		{
+			"Id": "PartOral",
+			"Name": "Oral"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		],
+		[
+			"ParamPositionX",
+			"ParamPositionY"
+		]
+	]
+}

@@ -1,0 +1,263 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "kya ru.moc3",
+    "Textures": [
+      "kya ru.8192/texture_00.png"
+    ],
+    "Physics": "kya ru.physics3.json",
+    "Motions": {
+      "All": [
+        {
+          "File": "motion/mtn_00.motion3.json"
+        },
+        {
+          "File": "motion/mtn_01.motion3.json"
+        },
+        {
+          "File": "motion/mtn_02.motion3.json"
+        },
+        {
+          "File": "motion/mtn_03.motion3.json"
+        },
+        {
+          "File": "motion/mtn_04.motion3.json"
+        },
+        {
+          "File": "motion/mtn_05.motion3.json"
+        },
+        {
+          "File": "motion/mtn_06.motion3.json"
+        },
+        {
+          "File": "motion/mtn_07.motion3.json"
+        },
+        {
+          "File": "motion/mtn_08.motion3.json"
+        },
+        {
+          "File": "motion/mtn_09.motion3.json"
+        }
+      ],
+      "TapHitArea": [
+        {
+          "File": "motion/mtn_00.motion3.json",
+          "Sound": "voice/01.wav",
+          "Text": "隐藏气息，仔细观察周围，小心别被那家伙发现……哎呀！为什么我的跟踪总是会暴露！？"
+        },
+        {
+          "File": "motion/mtn_03.motion3.json",
+          "Sound": "voice/04.wav",
+          "Text": "你说是你救了我？嗯，姑且 谢谢你啦"
+        }
+      ],
+      "TapHitArea2": [
+        {
+          "File": "motion/mtn_01.motion3.json",
+          "Sound": "voice/02.wav",
+          "Text": "你丧失了记忆，应该过的很不容易吧，所以就由我来照顾你吧，你可得感谢我♪"
+        }
+      ],
+      "TapHitArea3": [
+        {
+          "File": "motion/mtn_02.motion3.json",
+          "Sound": "voice/03.wav",
+          "Text": "其实我不能与你变得要好的……不过还挺开心的，无所谓啦！"
+        }
+      ],
+      "Idle": [
+        {
+          "File": "motion/mtn_04.motion3.json"
+        },
+        {
+          "File": "motion/mtn_05.motion3.json"
+        },
+        {
+          "File": "motion/mtn_06.motion3.json"
+        },
+        {
+          "File": "motion/mtn_07.motion3.json"
+        },
+        {
+          "File": "motion/mtn_08.motion3.json"
+        },
+        {
+          "File": "motion/mtn_09.motion3.json"
+        }
+      ]
+    }
+  },
+  "Controllers": {
+    "ParamHit": {},
+    "ParamLoop": {},
+    "KeyTrigger": {},
+    "EyeBlink": {
+      "MinInterval": 500,
+      "MaxInterval": 6000,
+      "Enabled": true
+    },
+    "LipSync": {
+      "Gain": 5.0,
+      "Enabled": true
+    },
+    "MouseTracking": {
+      "SmoothTime": 0.15,
+      "Enabled": true
+    },
+    "AutoBreath": {
+      "Enabled": true
+    },
+    "ExtraMotion": {
+      "Enabled": true
+    },
+    "Accelerometer": {
+      "Enabled": true
+    },
+    "Microphone": {
+      "Items": [
+        {
+          "Id": "ParamMouthOpenY",
+          "Min": 0.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "Enabled": true
+    },
+    "Transform": {},
+    "FaceTracking": {
+      "AngleX": [
+        {
+          "Id": "ParamAngleX",
+          "Min": -30.0,
+          "Max": 30.0,
+          "Input": 0
+        }
+      ],
+      "AngleY": [
+        {
+          "Id": "ParamAngleY",
+          "Min": -30.0,
+          "Max": 30.0,
+          "Input": 0
+        }
+      ],
+      "AngleZ": [
+        {
+          "Id": "ParamAngleZ",
+          "Min": -30.0,
+          "Max": 30.0,
+          "Input": 0
+        }
+      ],
+      "PositionX": [
+        {
+          "Id": "ParamBodyAngleX",
+          "Min": -10.0,
+          "Max": 10.0,
+          "Input": 0
+        }
+      ],
+      "PositionY": [
+        {
+          "Id": "ParamBodyAngleY",
+          "Min": -10.0,
+          "Max": 10.0,
+          "Input": 0
+        }
+      ],
+      "PositionZ": [
+        {
+          "Id": "ParamBodyAngleZ",
+          "Min": -10.0,
+          "Max": 10.0,
+          "Input": 0
+        }
+      ],
+      "EyeLOpen": [
+        {
+          "Id": "ParamEyeLOpen",
+          "Min": 0.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "EyeROpen": [
+        {
+          "Id": "ParamEyeROpen",
+          "Min": 0.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "EyeballX": [
+        {
+          "Id": "ParamEyeBallX",
+          "Min": -1.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "EyeballY": [
+        {
+          "Id": "ParamEyeBallY",
+          "Min": -1.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "BrowLY": [
+        {
+          "Id": "ParamBrowLY",
+          "Min": -1.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "BrowRY": [
+        {
+          "Id": "ParamBrowRY",
+          "Min": -1.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "MouthOpenY": [
+        {
+          "Id": "ParamMouthOpenY",
+          "Min": 0.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ],
+      "Enabled": true
+    },
+    "ParamValue": {},
+    "PartOpacity": {},
+    "ArtmeshOpacity": {},
+    "ArtmeshCulling": {
+      "DefaultMode": 0
+    },
+    "IntimacySystem": {
+      "MaxValue": 999,
+      "BonusActive": 10,
+      "BonusInactive": 5,
+      "Enabled": true
+    }
+  },
+  "HitAreas": [
+    {
+      "Name": "HitArea",
+      "Id": "HitArea"
+    },
+    {
+      "Name": "HitArea2",
+      "Id": "HitArea2"
+    },
+    {
+      "Name": "HitArea3",
+      "Id": "HitArea3"
+    }
+  ],
+  "Options": {}
+}

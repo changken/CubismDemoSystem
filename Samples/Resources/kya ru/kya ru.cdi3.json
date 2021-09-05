@@ -1,0 +1,481 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "左眼　开闭"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "左眼　微笑"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "右眼"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "右眼　微笑"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "眼球 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "眼球 Y"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "",
+			"Name": "左眉上下"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "",
+			"Name": "右眉　上下"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "",
+			"Name": "左眉　左右"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "",
+			"Name": "右眉　左右"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "",
+			"Name": "左眉　角度"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "",
+			"Name": "右眉　角度"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "左眉　変形"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "右眉　変形"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "嘴部　变形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "嘴巴　张开和闭合"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "脸颊"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "身体旋转　X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "身体旋转　Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "身体旋转　Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "摇动　前发"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "摇动　侧发"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "摇动　后发"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "右耳"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "左耳"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "右大臂 旋转"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "右小臂 旋转"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "左大臂 旋转"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "左小臂 旋转"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "衣服 摇动"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh",
+			"GroupId": "ParamGroup",
+			"Name": "[0]Hair front R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh",
+			"GroupId": "ParamGroup",
+			"Name": "[1]Hair front R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh",
+			"GroupId": "ParamGroup",
+			"Name": "[2]Hair front R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh",
+			"GroupId": "ParamGroup",
+			"Name": "[3]Hair front R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh",
+			"GroupId": "ParamGroup",
+			"Name": "[4]Hair front R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_ArtMesh",
+			"GroupId": "ParamGroup",
+			"Name": "[5]Hair front R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_ArtMesh",
+			"GroupId": "ParamGroup",
+			"Name": "[6]Hair front R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh0",
+			"GroupId": "ParamGroup2",
+			"Name": "[0]Hair front L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh0",
+			"GroupId": "ParamGroup2",
+			"Name": "[1]Hair front L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh0",
+			"GroupId": "ParamGroup2",
+			"Name": "[2]Hair front L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh0",
+			"GroupId": "ParamGroup2",
+			"Name": "[3]Hair front L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh0",
+			"GroupId": "ParamGroup2",
+			"Name": "[4]Hair front L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_ArtMesh0",
+			"GroupId": "ParamGroup2",
+			"Name": "[5]Hair front L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_ArtMesh0",
+			"GroupId": "ParamGroup2",
+			"Name": "[6]Hair front L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[0]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[1]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[2]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[3]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[4]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[5]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[6]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_8_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[7]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_9_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[8]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_10_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[9]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_11_ArtMesh26",
+			"GroupId": "ParamGroup3",
+			"Name": "[10]Hari back L"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[0]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[1]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[2]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[3]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[4]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[5]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[6]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_8_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[7]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_9_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[8]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_10_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[9]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_11_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[10]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_12_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[11]Hari back R"
+		},
+		{
+			"Id": "Param_Angle_Rotation_13_ArtMesh25",
+			"GroupId": "ParamGroup4",
+			"Name": "[12]Hari back R"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "Hair front R"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "Hair front L"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "Hari back L"
+		},
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "Hari back R"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part5",
+			"Name": "Core"
+		},
+		{
+			"Id": "wand",
+			"Name": "wand"
+		},
+		{
+			"Id": "Part",
+			"Name": "Hair side"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Hair frout"
+		},
+		{
+			"Id": "Ear",
+			"Name": "Ear"
+		},
+		{
+			"Id": "Brow",
+			"Name": "Brow"
+		},
+		{
+			"Id": "Eye",
+			"Name": "Eye"
+		},
+		{
+			"Id": "Cheek",
+			"Name": "Cheek"
+		},
+		{
+			"Id": "Part4",
+			"Name": "Mouse"
+		},
+		{
+			"Id": "Nouse",
+			"Name": "Nouse"
+		},
+		{
+			"Id": "Face",
+			"Name": "Face"
+		},
+		{
+			"Id": "Neck",
+			"Name": "Neck"
+		},
+		{
+			"Id": "Arm",
+			"Name": "Arm"
+		},
+		{
+			"Id": "Body",
+			"Name": "Body"
+		},
+		{
+			"Id": "Part3",
+			"Name": "Hair back"
+		},
+		{
+			"Id": "ArtMesh_Skinning",
+			"Name": "Hair front R(蒙皮)"
+		},
+		{
+			"Id": "Part6",
+			"Name": "Hair front R(回转)"
+		},
+		{
+			"Id": "ArtMesh0_Skinning",
+			"Name": "Hair front L(蒙皮)"
+		},
+		{
+			"Id": "Part7",
+			"Name": "Hair front L(回转)"
+		},
+		{
+			"Id": "ArtMesh25_Skinning",
+			"Name": "Hari back R(蒙皮)"
+		},
+		{
+			"Id": "Part9",
+			"Name": "Hari back R(回转)"
+		},
+		{
+			"Id": "ArtMesh26_Skinning",
+			"Name": "Hari back L(蒙皮)"
+		},
+		{
+			"Id": "Part8",
+			"Name": "Hari back L(回转)"
+		}
+	]
+}

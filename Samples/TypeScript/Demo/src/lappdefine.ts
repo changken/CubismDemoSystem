@@ -54,14 +54,24 @@ export const PowerImageName = 'CloseNormal.png';
 // export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice'];
 // export const ModelDir: string[] = ['Haru', 'Hiyori', 'Rice'];
 //after rice is offical website downloaded
-export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice',
- 'rice_pro_t03', 'mark_free_t04', 'hiyori_pro_t10', 'natori_pro_t06', 'miara_pro_t03',
- 'miku_sample_t04', 'haru_greeter_t03', 'nito', 'nipsilon', 'ni-j', 'nietzsche', 'nico',
- 'Gantzert_Felixander', 'tororo', 'hijiki', 'koharu', 'haruto', 
- 'tsumiki', 'unitychan', 'chitose', 'Epsilon', 'Haru_normal', 
-'wanko_touch', 'izumi_illust', 'sizuku', 'hibiki', 'simple'];
+// export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice',
+//  'rice_pro_t03', 'mark_free_t04', 'hiyori_pro_t10', 'natori_pro_t06', 'miara_pro_t03',
+//  'miku_sample_t04', 'haru_greeter_t03', 'nito', 'nipsilon', 'ni-j', 'nietzsche', 'nico',
+//  'Gantzert_Felixander', 'tororo', 'hijiki', 'koharu', 'haruto', 
+//  'tsumiki', 'unitychan', 'chitose', 'Epsilon', 'Haru_normal', 
+// 'wanko_touch', 'izumi_illust', 'sizuku', 'hibiki', 'simple'];
+export const ModelDir: string[] = ['rice_pro_t03', 'mark_movie_pro_t02', 'hiyori_movie_pro_t02', 'natori_pro_t06', 'miara_pro_t03',
+ 'miku_sample_t04', 'haru_greeter_t03', 'mark_free_t04', 'hiyori_pro_t10', 'ni-j', 
+ 'Gantzert_Felixander', 'tororo', 'haruto', 'tsumiki', 'unitychan', 
+ 'chitose', 'Epsilon', 'Haru_normal', 'wanko_touch', 'izumi_illust', 
+ 'sizuku', 'hibiki', 'simple', 'nietzsche', 'nipsilon',
+ 'nito', 'nico', 'hijiki', 'koharu', 'Haru', 
+ 'Hiyori', 'Mark', 'Natori', 'Rice', 'kya ru', 'congyu'];
 
 export const ModelDirSize: number = ModelDir.length;
+
+//展示模式
+export const displayMode = true;
 
 // console.log(ModelDirSize);
 

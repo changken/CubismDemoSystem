@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "mark_movie_pro_t02.moc3",
+		"Textures": [
+			"mark_movie_pro_t02.2048/texture_00.png"
+		],
+		"Physics": "mark_movie_pro_t02.physics3.json",
+		"DisplayInfo": "mark_movie_pro_t02.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}
