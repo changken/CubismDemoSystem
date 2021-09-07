@@ -30,9 +30,12 @@ export const ViewLogicalMaxRight = 2.0;
 export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
+//簡報模式
+export const powerpointMode = false;
+
 // 相対パス
 //模型
-export const ResourcesPath = '../../Resources/';
+export const ResourcesPath = !powerpointMode ? '../../Resources/' : './Resources/';
 
 // モデルの後ろにある背景の画像ファイル
 //背景圖片
