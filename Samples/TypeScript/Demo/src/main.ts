@@ -9,6 +9,7 @@ import { LAppDelegate } from './lappdelegate';
 import * as LAppDefine from './lappdefine';
 import { LAppLive2DManager } from './lapplive2dmanager';
 import { modelControl } from './components/modelControl';
+import { Route } from './components/routes';
 
 // const lAppDelegates = [];
 
@@ -72,6 +73,7 @@ window.onload = (): void => {
 (window as any).modelControl = modelControl;
 
 window.onhashchange = () => {
+  Route.getInstance();
   changeCharacter();
 }
 
@@ -80,9 +82,13 @@ const changeCharacter = () => {
     const no:number = parseInt(location.hash.split("#/")[1]);
     LAppLive2DManager.getInstance().changeScene(no);
   }else{
-    LAppLive2DManager.getInstance().nextScene();
+    const routeUrl = location.hash.split("#/")[1];
+    Route.getInstance().getRoute(routeUrl);
+    // LAppLive2DManager.getInstance().nextScene();
   }
 }
+
+(window as any).setRoute = Route.getInstance().setRoute;
 
 /**
  * 終了時の処理
