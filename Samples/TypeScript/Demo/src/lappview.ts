@@ -130,7 +130,7 @@ export class LAppView {
    * 描画する。
    * 生成cubism live2d model
    */
-   public renderModel(positionX:number, scale:number): void {
+   public renderModel(positionX:number, positionY:number, scale:number): void {
     gl.useProgram(this._programId);
 
     if (this._back) {
@@ -150,7 +150,7 @@ export class LAppView {
     live2DManager.mouthX = this.mouthX;
     live2DManager.mouthY = this.mouthY;
 
-    live2DManager.updateModel(positionX, scale);
+    live2DManager.updateModel(positionX, positionY, scale);
   }
 
   /**
@@ -171,20 +171,20 @@ export class LAppView {
 
     // 非同期なのでコールバック関数を作成
     //創建回調函數，因為它是異步的
-    const initBackGroundTexture = (textureInfo: TextureInfo): void => {
-      const x: number = width * 0.5;
-      const y: number = height * 0.5;
+    // const initBackGroundTexture = (textureInfo: TextureInfo): void => {
+    //   const x: number = width * 0.5;
+    //   const y: number = height * 0.5;
 
-      const fwidth = textureInfo.width * 2.0;
-      const fheight = height * 0.95;
-      this._back = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-    };
+    //   const fwidth = textureInfo.width * 2.0;
+    //   const fheight = height * 0.95;
+    //   this._back = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+    // };
 
-    textureManager.createTextureFromPngFile(
-      resourcesPath + imageName,
-      false,
-      initBackGroundTexture
-    );
+    // textureManager.createTextureFromPngFile(
+    //   resourcesPath + imageName,
+    //   false,
+    //   initBackGroundTexture
+    // );
 
     // 歯車画像初期化
     //齒輪圖片初始化

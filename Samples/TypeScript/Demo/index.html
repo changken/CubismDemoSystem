@@ -14,7 +14,7 @@
   </style>
   <link rel="stylesheet" href="vendor/reveal/reset.css">
   <link rel="stylesheet" href="vendor/reveal/reveal.css">
-  <link rel="stylesheet" href="vendor/reveal/theme/white.css">
+  <link rel="stylesheet" href="vendor/reveal/theme/black.css">
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="vendor/reveal/plugin/highlight/monokai.css">
@@ -57,9 +57,9 @@
   </style>
 </head>
 
-<body>
+<body style="background-image: url('https://prd-image-masters.caravan-stories.com.tw/c/sig=1.wJPHhERFgwnK6pqXcpnOuTgK_Pkdv2HcqqPh335P2iM=/caravan-stories/masters/production-tw/attachments/1b21c7fb435b583e0592c03c04df26a9.jpg');">
   <!--range -->
-  <input type="range" min="0" max="100" value="0" onchange="">
+  <!-- <input type="range" min="0" max="100" value="0" onchange=""> -->
   <div class="reveal">
     <div class="slides">
       <section id="0">
@@ -233,19 +233,29 @@
   <ul id="motions"></ul>
   <!-- reveal.js-->
   <script src="vendor/reveal/reveal.js"></script>
+  <script src="main.js"></script>
   <!-- <script src="vendor/reveal/plugin/notes/notes.js"></script>
   <script src="vendor/reveal/plugin/markdown/markdown.js"></script>
   <script src="vendor/reveal/plugin/highlight/highlight.js"></script> -->
   <script>
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
-    Reveal.initialize({
-      hash: true,
+    // Reveal.on( 'ready', event => {
+    // // event.currentSlide, event.indexh, event.indexv
+    //   runModel(0,0,1);
+    //   changeScene(event.indexh);
+    // });
 
-      // Learn about plugins: https://revealjs.com/plugins/
-      // plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-    });
+  
+    //使用 slidechanged 
+    // Reveal.on( 'slidechanged', event => {
+    //   //event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //   if(event.indexh === 32){
+    //     runModel(1, 1, 1.3);
+    //     changeScene(2);
+    //   }else{
+    //     runModel(0,0,1);
+    //     changeScene(event.indexh);
+    //   }
+    // });
   </script>
 </body>
 

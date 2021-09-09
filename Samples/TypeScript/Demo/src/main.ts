@@ -9,22 +9,10 @@ import { LAppDelegate } from './lappdelegate';
 import * as LAppDefine from './lappdefine';
 import { LAppLive2DManager } from './lapplive2dmanager';
 import { modelControl } from './components/modelControl';
-import { Route } from './components/routes';
-
-// const lAppDelegates = [];
 
 /**
  * changken
  */
-// const renderCubismModel = (renderDom) => {
-//   lAppDelegates.push(new LAppDelegate());
-//   // create the application instance
-//   if (lAppDelegates[lAppDelegates.length - 1].initialize(renderDom) == false) {
-//     return;
-//   }
-
-//   lAppDelegates[lAppDelegates.length - 1].run();
-// }
 const renderCubismModel = () => {
   // create the application instance
   if (LAppDelegate.getInstance().initialize() == false) {
@@ -38,57 +26,34 @@ const renderCubismModel = () => {
  * ブラウザロード後の処理
  */
 window.onload = (): void => {
-  //renderCubismModel([document.querySelector('#slide1'), document.querySelector('#slide2'), document.querySelector('#slide3')]);
   renderCubismModel();
-  //renderCubismModel(document.querySelector('#slide2'));
-  //renderCubismModel(document.querySelector('#slide3'));
 
-  // document.querySelector('navigate-left').addEventListener('click', e => {
-  //   alert('left');
-  // });
-
-  // document.querySelector('navigate-right').addEventListener('click', e => {
-  //   alert('right');
-  // });
-
-  //initialize
-  if(LAppDefine.displayMode)
-    changeCharacter();
-
-  document.querySelector('.reveal').addEventListener('click', e => {
-    const target = e.target as HTMLTextAreaElement;
-
-    // console.log(target.className === 'controls-arrow');
-
-    if (target.className === 'controls-arrow') {
-      changeCharacter();
-    }
-  });
-
-  // renderMotions();
-
-  // selectMotion(1);
+  //初始化當前hash的角色
+  if(LAppDefine.displayMode && location.hash){
+    const no = parseInt(location.hash.split("#/")[1]);
+    modelControl(no, 0.5, -0.1, 1.1);
+  }
 };
-
-(window as any).modelControl = modelControl;
-
-window.onhashchange = () => {
-  Route.getInstance();
-  changeCharacter();
-}
-
-const changeCharacter = () => {
-  if(LAppDefine.displayMode){ 
-    const no:number = parseInt(location.hash.split("#/")[1]);
-    LAppLive2DManager.getInstance().changeScene(no);
-  }else{
-    const routeUrl = location.hash.split("#/")[1];
-    Route.getInstance().getRoute(routeUrl);
-    // LAppLive2DManager.getInstance().nextScene();
+declare global{
+  interface Window{
+    changeScene:unknown;
+    runModel:unknown;
+    modelControl: unknown;
   }
 }
 
-(window as any).setRoute = Route.getInstance().setRoute;
+// export some function
+(window as any).modelControl = (no: number, positionX:number, positionY:number, scale:number) => {
+  modelControl(no, positionX, positionY, scale);
+}
+
+(window as any).changeScene = (index:number) => {
+  LAppLive2DManager.getInstance().changeScene(index);
+}
+
+(window as any).runModel = (positionX:number, positionY:number, scale:number)=>{
+  LAppDelegate.getInstance().runModel(positionX, positionY, scale);
+}
 
 /**
  * 終了時の処理

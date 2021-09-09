@@ -163,7 +163,7 @@ export class LAppLive2DManager {
       }
 
       // x軸相對移動 0~1之間
-      projection.translateX(0.5);
+      // projection.translateX(0.5);
 
       model.update();
       model.draw(projection); // 参照渡しなのでprojectionは変質する。
@@ -181,7 +181,7 @@ export class LAppLive2DManager {
    * 更新畫面時的處理
    * 執行模型更新處理和繪圖處理
    */
-   public updateModel(positionX:number, scale: number): void {
+   public updateModel(positionX:number, positionY:number, scale: number): void {
     const { width, height } = canvas;
 
     const projection: CubismMatrix44 = new CubismMatrix44();
@@ -212,7 +212,7 @@ export class LAppLive2DManager {
       }
 
       // x軸相對移動 0~1之間
-      // projection.translateX(0.5);
+      projection.translateY(positionY);
       projection.translateX(positionX);
 
       //放大縮小 1~10

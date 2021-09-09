@@ -170,9 +170,10 @@ export class LAppDelegate {
     const loop = (): void => {
 
       // mouth
-      let rangeEl = document.querySelector('input[type=range]') as HTMLInputElement;
+      // let rangeEl = document.querySelector('input[type=range]') as HTMLInputElement;
 
-      let rangeValue = parseInt(rangeEl.value);
+      // let rangeValue = parseInt(rangeEl.value);
+      let rangeValue = 0;
       //先傳到lapp delegate的view的參數
       LAppDelegate.getInstance()._view.mouthX = 0;
       LAppDelegate.getInstance()._view.mouthY = rangeValue / 100;
@@ -189,7 +190,7 @@ export class LAppDelegate {
 
       // 画面の初期化
       //畫面初始化
-      gl.clearColor(0.0, 0.0, 0.0, 1.0);
+      gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
       // 深度テストを有効化
       //深度測試
@@ -225,12 +226,13 @@ export class LAppDelegate {
    * 
    * @author changken
    */
-  public runModel(positionX:number, scale:number) {
+  public runModel(positionX:number, positionY:number, scale:number) {
     const loop = ():void=>{
       // mouth
-      let rangeEl = document.querySelector('input[type=range]') as HTMLInputElement;
+      // let rangeEl = document.querySelector('input[type=range]') as HTMLInputElement;
 
-      let rangeValue = parseInt(rangeEl.value);
+      // let rangeValue = parseInt(rangeEl.value);
+      let rangeValue = 0;
       //先傳到lapp delegate的view的參數
       LAppDelegate.getInstance()._view.mouthX = 0;
       LAppDelegate.getInstance()._view.mouthY = rangeValue / 100;
@@ -247,7 +249,7 @@ export class LAppDelegate {
 
       // 画面の初期化
       //畫面初始化
-      gl.clearColor(0.0, 0.0, 0.0, 1.0);
+      gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
       // 深度テストを有効化
       //深度測試
@@ -269,7 +271,7 @@ export class LAppDelegate {
 
       // 描画更新
       // 畫布更新
-      this._view.renderModel(positionX, scale);
+      this._view.renderModel(positionX, positionY, scale);
     
       // 取消recursive
       cancelAnimationFrame(0);
