@@ -223,6 +223,10 @@ export class LAppLive2DManager {
     }
   }
 
+  public startSelectedMotion(i:number, no:number){
+    this._models.get()[i].startSelectedMotion(no);
+  }
+
   /**
    * 次のシーンに切りかえる
    * サンプルアプリケーションではモデルセットの切り替えを行う。

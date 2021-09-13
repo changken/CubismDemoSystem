@@ -668,7 +668,7 @@ export class LAppModel extends CubismUserModel {
 
     //如果位處於展示模式 則選取指定動作
     if(LAppDefine.displayMode && group === 'All'){
-      selectMotion(no, this.motions);
+      selectMotion(no, this.motions, this);
     }
 
     //做動作
@@ -705,6 +705,29 @@ export class LAppModel extends CubismUserModel {
     //做該動作
     return this.startMotion(group, no, priority, onFinishedMotionHandler);
   }
+
+    /**
+   * ランダムに選ばれたモーションの再生を開始する。 開始播放隨機選擇的動作。
+   * @param no 動作編號
+   * @param onFinishedMotionHandler モーション再生終了時に呼び出されるコールバック関数 動作播放結束時調用的回調函數
+   * @return 開始したモーションの識別番号を返す。個別のモーションが終了したか否かを判定するisFinished()の引数で使用する。開始できない時は[-1] 返回已啟動運動的標識號。在 isFinished() 的參數中使用以確定單個運動是否已結束。如果無法啟動 [-1]
+   * @todo
+  */
+     public startSelectedMotion(
+      no:number,
+      onFinishedMotionHandler?: FinishedMotionCallback
+    ): CubismMotionQueueEntryHandle {
+      //如果沒動作 error
+      if (this._modelSetting.getMotionCount(LAppDefine.MotionGroupAll) == 0) {
+        return InvalidMotionQueueEntryHandleValue;
+      }
+  
+      //選擇指定動作
+      const selectedNo: number = no % this._modelSetting.getMotionCount(LAppDefine.MotionGroupAll)
+  
+      //做該動作
+      return this.startMotion(LAppDefine.MotionGroupAll, selectedNo, LAppDefine.PriorityForce, onFinishedMotionHandler);
+    }
 
   /**
    * 引数で指定した表情モーションをセットする
@@ -863,7 +886,7 @@ export class LAppModel extends CubismUserModel {
 
     //如果在展示模式下則顯示動作
     if(LAppDefine.displayMode && group === 'All'){
-      renderMotions(motions);
+      renderMotions(motions, this);
       this.motions = motions;
     }
   }

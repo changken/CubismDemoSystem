@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1900">
+  <title>TypeScript HTML App</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+  <link rel="stylesheet" href="vendor/reveal/reset.css">
+  <link rel="stylesheet" href="vendor/reveal/reveal.css">
+  <link rel="stylesheet" href="vendor/reveal/theme/black.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="vendor/reveal/plugin/highlight/monokai.css">
+  <!-- Pollyfill script -->
+  <script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
+  <!-- Live2DCubismCore script -->
+  <script src="../../../Core/live2dcubismcore.js"></script>
+  <!-- Build script -->
+  <script src="./dist/bundle.js"></script>
+  <style>
+    ul, ol{
+      list-style: none;
+      margin-left: 0;
+    }
+    .reveal {
+      left: 10%;
+      width: 50%;
+      position: absolute;
+      top: 20px;
+    }
+    #motions{
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #fff;
+      position: absolute;
+      top: 50%;
+      left:10%;
+    }
+
+    #motions li{
+      background: #000;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    #motions li.selected{
+      background: #f00;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('https://prd-image-masters.caravan-stories.com.tw/c/sig=1.wJPHhERFgwnK6pqXcpnOuTgK_Pkdv2HcqqPh335P2iM=/caravan-stories/masters/production-tw/attachments/1b21c7fb435b583e0592c03c04df26a9.jpg');">
+  <div class="reveal">
+    <div class="slides">
+      <!--
+         data-no: 老師網頁的cubism人物編號(從0開始，網頁上的編號-1)
+         data-positionx: cubism人物水平位移範圍(建議-1 ~ 0.9)
+         data-positiony: cubism人物垂直位移範圍(建議-0.9~0.4)
+         data-scale: cubism人物縮放(建議1~2之間的小數值，最大極限是3)
+         data-motionno: cubism人物指定動作編號(從0開始，請參閱model3.json檔案的ALL MOTION GROUP)
+      -->
+      <section data-no="1" data-positionx="0.1" data-positiony="0.1" data-scale="1.1" data-motionno="1">
+        <h1>你好世界1</h1>
+        <h2>馬克君</h2>
+      </section>
+      <section data-no="3" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
+        <h1>你好世界2</h1>
+        <h2>Natori</h2>
+      </section>
+      <!--預設沒有設定屬性，人物就是rice-->
+      <section>
+        <h1>你好世界3</h1>
+        <h2>預設是Rice</h2>
+      </section>
+    </div>
+  </div>
+  <!-- reveal.js-->
+  <script src="vendor/reveal/reveal.js"></script>
+  <!-- <script src="vendor/reveal/plugin/notes/notes.js"></script>
+  <script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+  <script src="vendor/reveal/plugin/highlight/highlight.js"></script> -->
+  <script src="main-ppt.js"></script>
+</body>
+
+</html>

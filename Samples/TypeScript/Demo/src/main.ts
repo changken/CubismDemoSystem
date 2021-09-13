@@ -55,6 +55,10 @@ declare global{
   LAppDelegate.getInstance().runModel(positionX, positionY, scale);
 }
 
+(window as any).startSelectedMotion = (i:number, no:number) => {
+  LAppLive2DManager.getInstance().startSelectedMotion(i, no);
+}
+
 /**
  * 終了時の処理
  */
