@@ -21,7 +21,7 @@
   <!-- Pollyfill script -->
   <script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
   <!-- Live2DCubismCore script -->
-  <script src="../../../Core/live2dcubismcore.js"></script>
+  <script src="./dist/live2dcubismcore.js"></script>
   <!-- Build script -->
   <script src="./dist/bundle.js"></script>
   <style>
@@ -54,6 +54,15 @@
     #motions li.selected{
       background: #f00;
     }
+
+    #pageIndex{
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+      background: transparent;
+      color: #fff;
+      font-size: 18px;
+    }
   </style>
 </head>
 
@@ -74,6 +83,16 @@
       <section data-no="3" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
         <h1>你好世界2</h1>
         <h2>Natori</h2>
+        <section data-no="4" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
+          <h1>hello 2-1</h1>
+        </section>
+        <section data-no="6" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
+          <h1>hello 2-2</h1>
+        </section>
+      </section>
+      <!--新增一頁-->
+      <section data-no="32" data-positionx="-0.8" data-positiony="0.3" data-scale="1.5" data-motionno="7">
+        <h1>fff</h1>
       </section>
       <!--預設沒有設定屬性，人物就是rice-->
       <section>
@@ -82,6 +101,7 @@
       </section>
     </div>
   </div>
+  <div id="pageIndex"></div>
   <!-- reveal.js-->
   <script src="vendor/reveal/reveal.js"></script>
   <!-- <script src="vendor/reveal/plugin/notes/notes.js"></script>

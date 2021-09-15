@@ -24,13 +24,8 @@ Reveal.on('ready', e => {
       'motionno' in e.currentSlide.dataset
     ) {
       // 根據dataset設定
-      let {
-        no,
-        positionx,
-        positiony,
-        scale,
-        motionno,
-      } = e.currentSlide.dataset;
+      let { no, positionx, positiony, scale, motionno } =
+        e.currentSlide.dataset;
       no = parseInt(no);
       positionx = parseFloat(positionx);
       positiony = parseFloat(positiony);
@@ -43,6 +38,8 @@ Reveal.on('ready', e => {
       modelControl(0, 0.5, -0.1, 1.1);
     }
   });
+
+  document.getElementById('pageIndex').innerHTML = e.indexh + 1 + '';
 });
 
 //切換頁面時
@@ -70,4 +67,6 @@ Reveal.on('slidechanged', e => {
     // default
     modelControl(0, 0.5, -0.1, 1.1);
   }
+
+  document.getElementById('pageIndex').innerHTML = e.indexh + 1 + '';
 });

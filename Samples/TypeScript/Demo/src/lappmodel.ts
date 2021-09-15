@@ -821,6 +821,11 @@ export class LAppModel extends CubismUserModel {
     //蒐集動作陣列
     let motions:string[] = [];
 
+    if(this._modelSetting.getMotionCount(group) === 0){
+      document.querySelector("#motions").innerHTML="";
+      console.log('model motion 0');
+    }
+
     //加載所有動作
     for (let i = 0; i < this._modelSetting.getMotionCount(group); i++) {
       //動作檔案

@@ -25,6 +25,9 @@
   <!-- Build script -->
   <script src="./dist/bundle.js"></script>
   <style>
+    body{
+      display: flex;
+    }
     ul, ol{
       list-style: none;
       margin-left: 0;
@@ -36,12 +39,13 @@
       top: 20px;
     }
     #motions{
+      align-self: center;
       padding: 5px;
       border-radius: 5px;
       /* border: 1px solid #fff; */
-      position: absolute;
-      top: 50%;
-      left:10%;
+      /* position: absolute;
+      top: 10%;
+      left:10px; */
     }
 
     #motions li{
@@ -53,6 +57,15 @@
 
     #motions li.selected{
       background: #f00;
+    }
+
+    #pageIndex{
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+      background: #000;
+      color: #fff;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -223,14 +236,15 @@
         <h2>凱留</h2>
         <h3>Karyl</h3>
       </section>
-      <section id="35">
+      <!-- <section id="35">
         <h1>這支有bug</h1>
         <h2></h2>
         <h3></h3>
-      </section>
+      </section> -->
     </div>
   </div>
   <ul id="motions"></ul>
+  <div id="pageIndex"></div>
   <!-- reveal.js-->
   <script src="vendor/reveal/reveal.js"></script>
   <script src="main.js"></script>

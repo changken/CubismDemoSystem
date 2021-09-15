@@ -14,7 +14,12 @@ Reveal.initialize({
 //   modelControl(e.indexh, 0.5, -0.1, 1.1);
 // });
 
+Reveal.on('ready', e => {
+  document.getElementById('pageIndex').innerHTML = e.indexh + 1 + '';
+});
+
 Reveal.on('slidechanged', e => {
   console.log(e.indexh);
   modelControl(e.indexh, 0.5, -0.1, 1.1);
+  document.getElementById('pageIndex').innerHTML = e.indexh + 1 + '';
 });
