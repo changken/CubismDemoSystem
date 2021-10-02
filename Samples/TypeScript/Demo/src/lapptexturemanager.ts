@@ -62,6 +62,7 @@ export class LAppTextureManager {
         // 詳細：https://stackoverflow.com/a/5024181
         ite.ptr().img = new Image();
         ite.ptr().img.onload = (): void => callback(ite.ptr());
+        this.requestCORSIfNotSameOrigin(ite.ptr().img, fileName);
         ite.ptr().img.src = fileName;
         return;
       }
@@ -111,6 +112,7 @@ export class LAppTextureManager {
 
       callback(textureInfo);
     };
+    this.requestCORSIfNotSameOrigin(img, fileName);
     img.src = fileName;
   }
 
@@ -162,6 +164,13 @@ export class LAppTextureManager {
   }
 
   _textures: csmVector<TextureInfo>;
+
+  //cros
+  public requestCORSIfNotSameOrigin(img, url) {
+    if ((new URL(url, window.location.href)).origin !== window.location.origin) {
+      img.crossOrigin = "";
+    }
+  }
 }
 
 /**

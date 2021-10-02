@@ -31,11 +31,11 @@ export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
 //簡報模式
-export const powerpointMode = false;
+export const powerpointMode = true;
 
 // 相対パス
 //模型
-export const ResourcesPath = !powerpointMode ? '../../Resources/' : './Resources/';
+export const ResourcesPath = !powerpointMode ? '../../Resources/' : 'https://changken.github.io/Resources/';
 
 // モデルの後ろにある背景の画像ファイル
 //背景圖片
@@ -74,7 +74,7 @@ export const ModelDir: string[] = ['rice_pro_t03', 'mark_movie_pro_t02', 'hiyori
 export const ModelDirSize: number = ModelDir.length;
 
 //展示模式
-export const displayMode = true;
+export const displayMode = false;
 
 // console.log(ModelDirSize);
 

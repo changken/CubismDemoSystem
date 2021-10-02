@@ -239,6 +239,10 @@ export class CubismFramework {
    * @return CubismManagerクラスのインスタンス
    */
   public static getIdManager(): CubismIdManager {
+    //singleton
+    // if(s_cubismIdManager === null){
+    //   s_cubismIdManager = new CubismIdManager();
+    // }
     return s_cubismIdManager;
   }
 

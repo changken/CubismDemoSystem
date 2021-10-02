@@ -147,7 +147,10 @@ export class LAppView {
     live2DManager.setViewMatrix(this._viewMatrix);
 
     // view的參數再傳到live2d manager
+    //mouth form
     live2DManager.mouthX = this.mouthX;
+
+    //mouth open Y
     live2DManager.mouthY = this.mouthY;
 
     live2DManager.updateModel(positionX, positionY, scale);
@@ -189,19 +192,19 @@ export class LAppView {
     // 歯車画像初期化
     //齒輪圖片初始化
     imageName = LAppDefine.GearImageName;
-    const initGearTexture = (textureInfo: TextureInfo): void => {
-      const x = width - textureInfo.width * 0.5;
-      const y = height - textureInfo.height * 0.5;
-      const fwidth = textureInfo.width;
-      const fheight = textureInfo.height;
-      this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-    };
+    // const initGearTexture = (textureInfo: TextureInfo): void => {
+    //   const x = width - textureInfo.width * 0.5;
+    //   const y = height - textureInfo.height * 0.5;
+    //   const fwidth = textureInfo.width;
+    //   const fheight = textureInfo.height;
+    //   this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+    // };
 
-    textureManager.createTextureFromPngFile(
-      resourcesPath + imageName,
-      false,
-      initGearTexture
-    );
+    // textureManager.createTextureFromPngFile(
+    //   resourcesPath + imageName,
+    //   false,
+    //   initGearTexture
+    // );
 
     // シェーダーを作成
     //創建著色器
@@ -315,6 +318,10 @@ export class LAppView {
   _gear: LAppSprite; // ギア画像
   _changeModel: boolean; // モデル切り替えフラグ
   _isClick: boolean; // クリック中
+
+  //mouth form
   public mouthX: number;
+
+  //mouth open Y
   public mouthY: number;
 }

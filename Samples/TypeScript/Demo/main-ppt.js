@@ -8,6 +8,8 @@ Reveal.initialize({
   // plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 });
 
+let isLoad = false;
+
 //emba模式
 //當reveal ready時
 Reveal.on('ready', e => {
@@ -24,8 +26,13 @@ Reveal.on('ready', e => {
       'motionno' in e.currentSlide.dataset
     ) {
       // 根據dataset設定
-      let { no, positionx, positiony, scale, motionno } =
-        e.currentSlide.dataset;
+      let {
+        no,
+        positionx,
+        positiony,
+        scale,
+        motionno,
+      } = e.currentSlide.dataset;
       no = parseInt(no);
       positionx = parseFloat(positionx);
       positiony = parseFloat(positiony);
@@ -37,6 +44,7 @@ Reveal.on('ready', e => {
       // default
       modelControl(0, 0.5, -0.1, 1.1);
     }
+    isLoad = true;
   });
 
   document.getElementById('pageIndex').innerHTML = e.indexh + 1 + '';
@@ -44,29 +52,37 @@ Reveal.on('ready', e => {
 
 //切換頁面時
 Reveal.on('slidechanged', e => {
-  console.log('slidechanged:' + e.indexh);
-  console.log('slidechanged:');
-  console.log(e.currentSlide.dataset);
-  if (
-    'no' in e.currentSlide.dataset &&
-    'positionx' in e.currentSlide.dataset &&
-    'positiony' in e.currentSlide.dataset &&
-    'scale' in e.currentSlide.dataset &&
-    'motionno' in e.currentSlide.dataset
-  ) {
-    // 根據dataset設定
-    let { no, positionx, positiony, scale, motionno } = e.currentSlide.dataset;
-    no = parseInt(no);
-    positionx = parseFloat(positionx);
-    positiony = parseFloat(positiony);
-    scale = parseFloat(scale);
-    motionno = parseInt(motionno);
-    modelControl(no, positionx, positiony, scale);
-    startSelectedMotion(no, motionno);
-  } else {
-    // default
-    modelControl(0, 0.5, -0.1, 1.1);
-  }
+  if (isLoad) {
+    console.log('slidechanged:' + e.indexh);
+    console.log('slidechanged:');
+    console.log(e.currentSlide.dataset);
+    if (
+      'no' in e.currentSlide.dataset &&
+      'positionx' in e.currentSlide.dataset &&
+      'positiony' in e.currentSlide.dataset &&
+      'scale' in e.currentSlide.dataset &&
+      'motionno' in e.currentSlide.dataset
+    ) {
+      // 根據dataset設定
+      let {
+        no,
+        positionx,
+        positiony,
+        scale,
+        motionno,
+      } = e.currentSlide.dataset;
+      no = parseInt(no);
+      positionx = parseFloat(positionx);
+      positiony = parseFloat(positiony);
+      scale = parseFloat(scale);
+      motionno = parseInt(motionno);
+      modelControl(no, positionx, positiony, scale);
+      startSelectedMotion(no, motionno);
+    } else {
+      // default
+      modelControl(0, 0.5, -0.1, 1.1);
+    }
 
-  document.getElementById('pageIndex').innerHTML = e.indexh + 1 + '';
+    document.getElementById('pageIndex').innerHTML = e.indexh + 1 + '';
+  }
 });

@@ -514,7 +514,9 @@ export class LAppModel extends CubismUserModel {
     //console.log('lappmodel: mouthX: ' + this.mouthX);
     //console.log('lappmodel: mouthY: ' + this.mouthY);
 
+    //mouth open Y
     this._model.setParameterValueById(this._idParamMouthOpenY, this.mouthY);
+    // mouth form
     this._model.setParameterValueById(this._idParamMouthForm, this.mouthX);
 
     //--------------------------------------------------------------------------
@@ -877,7 +879,8 @@ export class LAppModel extends CubismUserModel {
 
             // 全てのモーションを停止する
             // 停止所有動作
-            this._motionManager.stopAllMotions();
+            if(this._motionManager)
+              this._motionManager.stopAllMotions();
 
             this._updating = false;
             this._initialized = true;
@@ -980,10 +983,12 @@ export class LAppModel extends CubismUserModel {
       CubismDefaultParameterId.ParamBodyAngleX
     );
 
+    // mouth openY
     this._idParamMouthOpenY = CubismFramework.getIdManager().getId(
       CubismDefaultParameterId.ParamMouthOpenY
     );
 
+    //mouth form
     this._idParamMouthForm = CubismFramework.getIdManager().getId(
       CubismDefaultParameterId.ParamMouthForm
     );
@@ -1026,7 +1031,10 @@ export class LAppModel extends CubismUserModel {
   _allMotionCount: number; // モーション総数
   _wavFileHandler: LAppWavFileHandler; //wavファイルハンドラ
 
+  //mouth form
   public mouthX: number = 0;
+  
+  //mouth openY
   public mouthY: number = 0;
   motions: string[] = [];
 }

@@ -138,9 +138,11 @@ export class LAppDelegate {
    * 縮放canvas和從初始化view
    */
   public onResize(): void {
-    this._resizeCanvas();
-    this._view.initialize();
-    this._view.initializeSprite();
+    if(canvas){
+      this._resizeCanvas();
+      this._view.initialize();
+      this._view.initializeSprite();
+    }
   }
 
   /**
@@ -398,6 +400,7 @@ export class LAppDelegate {
    * 為了填滿銀幕而縮放canvas
    */
   private _resizeCanvas(): void {
+    // console.log(canvas);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }

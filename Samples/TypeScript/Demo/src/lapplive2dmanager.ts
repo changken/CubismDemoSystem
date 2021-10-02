@@ -36,6 +36,20 @@ export class LAppLive2DManager {
   }
 
   /**
+   * クラスのインスタンス（シングルトン）を返す。
+   * インスタンスが生成されていない場合は内部でインスタンスを生成する。
+   *
+   * @return クラスのインスタンス
+   */
+   public static getInstanceModelControl(no:number=null): LAppLive2DManager {
+    if (s_instance == null) {
+      s_instance = new LAppLive2DManager(no);
+    }
+
+    return s_instance;
+  }
+
+  /**
    * クラスのインスタンス（シングルトン）を解放する。
    */
   public static releaseInstance(): void {
@@ -191,7 +205,10 @@ export class LAppLive2DManager {
       const model: LAppModel = this.getModel(i);
 
       // 再從live2d manager to lapp model
+      //mouth form
       model.mouthX = this.mouthX;
+
+      //mouth openY
       model.mouthY = this.mouthY;
 
       if (model.getModel()) {
@@ -274,11 +291,11 @@ export class LAppLive2DManager {
   /**
    * コンストラクタ
    */
-  constructor() {
+  constructor(no:number=null) {
     this._viewMatrix = new CubismMatrix44();
     this._models = new csmVector<LAppModel>();
     this._sceneIndex = 0;
-    this.changeScene(this._sceneIndex);
+    this.changeScene(no ? no : this._sceneIndex);
   }
 
   _viewMatrix: CubismMatrix44; // モデル描画に用いるview行列
@@ -289,6 +306,9 @@ export class LAppLive2DManager {
     LAppPal.printMessage('Motion Finished:');
     console.log(self);
   };
+  //mouth form
   public mouthX: number;
+
+  //mouth open Y
   public mouthY: number;
 }
