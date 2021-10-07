@@ -30,12 +30,9 @@ export const ViewLogicalMaxRight = 2.0;
 export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
-//簡報模式
-export const powerpointMode = true;
-
 // 相対パス
 //模型
-export const ResourcesPath = !powerpointMode ? '../../Resources/' : 'https://changken.github.io/Resources/';
+export const ResourcesPath = 'https://changken.github.io/CubismResourcesRepo/';
 
 // モデルの後ろにある背景の画像ファイル
 //背景圖片
@@ -55,14 +52,6 @@ export const PowerImageName = 'CloseNormal.png';
 // 放置模型的目錄名稱陣列
 // 要匹配目錄名稱和model3.json的名字
 // export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice'];
-// export const ModelDir: string[] = ['Haru', 'Hiyori', 'Rice'];
-//after rice is offical website downloaded
-// export const ModelDir: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice',
-//  'rice_pro_t03', 'mark_free_t04', 'hiyori_pro_t10', 'natori_pro_t06', 'miara_pro_t03',
-//  'miku_sample_t04', 'haru_greeter_t03', 'nito', 'nipsilon', 'ni-j', 'nietzsche', 'nico',
-//  'Gantzert_Felixander', 'tororo', 'hijiki', 'koharu', 'haruto', 
-//  'tsumiki', 'unitychan', 'chitose', 'Epsilon', 'Haru_normal', 
-// 'wanko_touch', 'izumi_illust', 'sizuku', 'hibiki', 'simple'];
 export const ModelDir: string[] = ['rice_pro_t03', 'mark_movie_pro_t02', 'hiyori_movie_pro_t02', 'natori_pro_t06', 'miara_pro_t03',
  'miku_sample_t04', 'haru_greeter_t03', 'mark_free_t04', 'hiyori_pro_t10', 'ni-j', 
  'Gantzert_Felixander', 'tororo', 'haruto', 'tsumiki', 'unitychan', 
@@ -75,8 +64,6 @@ export const ModelDirSize: number = ModelDir.length;
 
 //展示模式
 export const displayMode = false;
-
-// console.log(ModelDirSize);
 
 // 外部定義ファイル（json）と合わせる
 export const MotionGroupAll = 'All';

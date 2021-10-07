@@ -57,11 +57,14 @@
 
     #pageIndex{
       position: absolute;
-      right: 10%;
-      bottom: 10%;
-      background: transparent;
+      right: 24px;
+      bottom: 24px;
+      background: #000;
       color: #fff;
-      font-size: 18px;
+      font-size: 26px;
+    }
+    .controls{
+      bottom: 24px !important;
     }
   </style>
 </head>
@@ -99,14 +102,66 @@
         <h1>你好世界3</h1>
         <h2>預設是Rice</h2>
       </section>
+      <!-- markdown plugin -->
+      <section data-markdown data-no="32" data-positionx="0.8" data-positiony="-0.1" data-scale="1.3" data-motionno="7">
+        <textarea data-template>
+          ## markdown test 1
+          paragraph aaa
+          you can only 
+          ---
+          ## markdown test 2
+          paragraph bbb
+          ---
+          ## speaker notes demo
+          Note:
+          This will only demo in notes window
+        </textarea>
+      </section>
+      <!-- notes -->
+      <section>
+        <h1>Notes demo</h1>
+        <aside class="notes">
+          我的備忘稿
+        </aside>
+      </section>
+      <!--highlight code-->
+      <section>
+        <pre>
+          <code data-trim data-noescape data-line-numbers="3-5|7-8">
+            // this is a iife function(立即表達函數) to prevent variable pollution
+            (() => {
+              function saySomething(msg: string){
+                return "I say " + msg;
+              }
+
+              let msg = "hi!";
+              console.log(saySomething(msg));
+            });
+          </code>
+        </pre>
+      </section>
+      <!--Math-->
+      <section>
+        <h1>Math example</h1>
+        \[\begin{aligned}
+        \dot{x} &amp; = \sigma(y-x) \\
+        \dot{y} &amp; = \rho x - y - xz \\
+        \dot{z} &amp; = -\beta z + xy
+        \end{aligned} \]
+      </section>
     </div>
   </div>
   <div id="pageIndex"></div>
   <!-- reveal.js-->
   <script src="vendor/reveal/reveal.js"></script>
-  <!-- <script src="vendor/reveal/plugin/notes/notes.js"></script>
+  <!--plugin-->
+  <script src="vendor/reveal/plugin/math/math.js"></script>
+  <script src="vendor/reveal/plugin/search/search.js"></script>
+  <script src="vendor/reveal/plugin/zoom/zoom.js"></script>
+
+  <script src="vendor/reveal/plugin/notes/notes.js"></script>
   <script src="vendor/reveal/plugin/markdown/markdown.js"></script>
-  <script src="vendor/reveal/plugin/highlight/highlight.js"></script> -->
+  <script src="vendor/reveal/plugin/highlight/highlight.js"></script>
   <script src="main-ppt.js"></script>
 </body>
 
