@@ -69,7 +69,7 @@
   </style>
 </head>
 
-<body style="background-image: url('https://prd-image-masters.caravan-stories.com.tw/c/sig=1.wJPHhERFgwnK6pqXcpnOuTgK_Pkdv2HcqqPh335P2iM=/caravan-stories/masters/production-tw/attachments/1b21c7fb435b583e0592c03c04df26a9.jpg');">
+<body style="background-image: url('https://images.ctfassets.net/hrltx12pl8hq/8MpEm5OxWXiNqLvWzCYpW/24f02cfe391aa8f25845de858982d449/shutterstock_749707636__1__copy.jpg');">
   <div class="reveal">
     <div class="slides">
       <!--
@@ -79,53 +79,91 @@
          data-scale: cubism人物縮放(建議1~2之間的小數值，最大極限是3)
          data-motionno: cubism人物指定動作編號(從0開始，請參閱model3.json檔案的ALL MOTION GROUP)
       -->
-      <section data-no="1" data-positionx="0.1" data-positiony="0.1" data-scale="1.1" data-motionno="1">
-        <h1>你好世界1</h1>
-        <h2>馬克君</h2>
+      <section data-no="1" data-positionx="0.5" data-positiony="0.1" data-scale="1.1" data-motionno="1">
+        <h2>NTUT Computer graphics laboratory - cubism 簡報系統</h2>
+        <h3>您好! 這份範例投影片就是教您如何用我們的簡報系統~</h3>
       </section>
       <section data-no="3" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
-        <h1>你好世界2</h1>
-        <h2>Natori</h2>
+        <h2>Prerequisite: Reveal.js 基本入門</h2>
+        <h3>請參考: <a href="https://revealjs.com/" target="_blank">https://revealjs.com/</a></h3>
+      </section>
+      <section data-no="3" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
+        <h2>本系統所改進的部分</h2>
+        <h3>能夠顯示cubism人物</h3>
+        <ul>
+          <li>人物編號可以在這邊找到: <a href="https://myweb.ntut.edu.tw/~tjhsieh/c/cs/ip2021s/parallax1/index.html" target="_blank">https://myweb.ntut.edu.tw/~tjhsieh/c/cs/ip2021s/parallax1/index.html</a></li>
+          <li>Cubism人物模型檔可以在這邊找到: <a href="https://github.com/changken/CubismResourcesRepo" target="_blank">https://github.com/changken/CubismResourcesRepo</a></li>
+        </ul>
+        <pre>
+          <code data-trim data-noescape>
+            &lt;section&gt;
+            data-no="老師網頁的cubism人物編號(從0開始，網頁上的編號-1)" 
+            data-positionx="cubism人物水平位移範圍(建議-1 ~ 0.9)" 
+            data-positiony="cubism人物垂直位移範圍(建議-0.9~0.4)" 
+            data-scale="cubism人物縮放(建議1~2之間的小數值，最大極限是3)" 
+            data-motionno="cubism人物指定動作編號(從0開始，請參閱model3.json檔案的ALL MOTION GROUP)">
+              簡報內容...
+            &lt;/section&gt;
+          </code>
+        </pre>
+      </section>
+      <section data-no="3" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
+        <h2>嵌套式slide</h2>
+        <h3>則父頁面的設定會被子頁面的設定所覆蓋</h3>
         <section data-no="4" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
-          <h1>hello 2-1</h1>
+          <h4>Example code: </h4>
+          <pre>
+            <code data-trim data-noescape>
+              &lt;section data-no="3" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2"&gt;
+                &lt;section data-no="4" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2"&gt;
+                  子頁面1
+                &lt;/section&gt;
+                &lt;section&gt; data-no="6" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2"&gt;
+                  子頁面2
+                &lt;/section&gt;
+              <&lt;/section&gt;
+            </code>
+          </pre>
         </section>
         <section data-no="6" data-positionx="0.5" data-positiony="-0.2" data-scale="1.2" data-motionno="2">
-          <h1>hello 2-2</h1>
+          <h4>我是子頁面</h4>
         </section>
       </section>
-      <!--新增一頁-->
-      <section data-no="32" data-positionx="-0.8" data-positiony="0.3" data-scale="1.5" data-motionno="7">
-        <h1>fff</h1>
-      </section>
-      <!--預設沒有設定屬性，人物就是rice-->
+      <!--沒有設定屬性，預設就是沒有人物，還有reveal會變滿版-->
       <section>
-        <h1>你好世界3</h1>
-        <h2>預設是Rice</h2>
+        <h2>沒有設定屬性</h2>
+        <h3>預設就是沒有人物，還有reveal會變滿版</h3>
+        <h3>此時是使用reveal原生的section slide</h3>
+      </section>
+      <!--外掛的展示-->
+      <section data-no="32" data-positionx="-0.8" data-positiony="0.3" data-scale="1.5" data-motionno="7">
+        <h2>以下頁面為reveal.js預設外掛的展示</h2>
       </section>
       <!-- markdown plugin -->
       <section data-markdown data-no="32" data-positionx="0.8" data-positiony="-0.1" data-scale="1.3" data-motionno="7">
         <textarea data-template>
-          ## markdown test 1
-          paragraph aaa
-          you can only 
+          ## markdown測試1
+          段落測試，您可以使用markdown來新增一些slide，如果你在section處設定本系統的data屬性，也會出現cubism人物唷!
           ---
-          ## markdown test 2
-          paragraph bbb
-          ---
-          ## speaker notes demo
+          ## markdown測試2
+          左邊應該是natori
+          
           Note:
-          This will only demo in notes window
+          這個是備忘錄，你應該看不到
         </textarea>
       </section>
       <!-- notes -->
       <section>
-        <h1>Notes demo</h1>
+        <h2>備忘錄測試</h2>
+        <h3>你應該看不到備忘錄</h3>
         <aside class="notes">
-          我的備忘稿
+          這個是備忘錄，你應該看不到
         </aside>
       </section>
       <!--highlight code-->
       <section>
+        <h2>highlight外掛</h2>
+        <h3>但如果你要顯示html code，那你應該要自行跳脫&lt;&gt;的符號!</h3>
         <pre>
           <code data-trim data-noescape data-line-numbers="3-5|7-8">
             // this is a iife function(立即表達函數) to prevent variable pollution
@@ -142,7 +180,8 @@
       </section>
       <!--Math-->
       <section>
-        <h1>Math example</h1>
+        <h2>Math外掛測試</h2>
+        <h3>有時候你會顯示數學式子</h3> 
         \[\begin{aligned}
         \dot{x} &amp; = \sigma(y-x) \\
         \dot{y} &amp; = \rho x - y - xz \\
