@@ -35,9 +35,6 @@ function change(e) {
   ) {
     if (canvas.style.display === 'none') {
       canvas.style.display = 'block';
-      reveal.style.width = '50%';
-      reveal.style.top = '20px';
-      reveal.style.left = '10%';
     }
 
     // 根據dataset設定
@@ -53,13 +50,9 @@ function change(e) {
     // default
     // modelControl(0, 0.5, -0.1, 1.1);
     canvas.style.display = 'none';
-    reveal.style.width = '100%';
-    reveal.style.top = '0';
-    reveal.style.left = '0';
   }
 
-  document.getElementById('pageIndex').innerHTML =
-    e.indexh + 1 + '-' + (e.indexv + 1);
+  document.getElementById('pageIndex').innerHTML = e.indexh + '-' + e.indexv;
 }
 
 //emba模式

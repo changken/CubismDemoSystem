@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1900">
-  <title>TypeScript HTML App</title>
+  <title>Cubism簡報系統</title>
   <style>
     html,
     body {
@@ -30,29 +30,9 @@
       margin-left: 0;
     }
     .reveal {
-      left: 10%;
-      width: 50%;
       position: absolute;
-      top: 20px;
-    }
-    #motions{
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #fff;
-      position: absolute;
-      top: 50%;
-      left:10%;
-    }
-
-    #motions li{
-      background: #000;
-      color: #fff;
-      padding: 5px;
-      border-radius: 5px;
-    }
-
-    #motions li.selected{
-      background: #f00;
+      left: 0;
+      top: 0;
     }
 
     #pageIndex{
@@ -91,8 +71,7 @@
         <h2>本系統所改進的部分</h2>
         <h3>能夠顯示cubism人物</h3>
         <ul>
-          <li>人物編號可以在這邊找到: <a href="https://myweb.ntut.edu.tw/~tjhsieh/c/cs/ip2021s/parallax1/index.html" target="_blank">https://myweb.ntut.edu.tw/~tjhsieh/c/cs/ip2021s/parallax1/index.html</a></li>
-          <li>Cubism人物模型檔可以在這邊找到: <a href="https://github.com/changken/CubismResourcesRepo" target="_blank">https://github.com/changken/CubismResourcesRepo</a></li>
+          <li>Cubism人物編號與相對應的動作編號<a href="https://changken.github.io/CubismDemoPage" target="_blank">可以在這邊找到</a></li>
         </ul>
         <pre>
           <code data-trim data-noescape>
@@ -129,10 +108,10 @@
           <h4>我是子頁面</h4>
         </section>
       </section>
-      <!--沒有設定屬性，預設就是沒有人物，還有reveal會變滿版-->
+      <!--沒有設定屬性，預設就是沒有人物-->
       <section>
         <h2>沒有設定屬性</h2>
-        <h3>預設就是沒有人物，還有reveal會變滿版</h3>
+        <h3>預設就是沒有人物</h3>
         <h3>此時是使用reveal原生的section slide</h3>
       </section>
       <!--外掛的展示-->

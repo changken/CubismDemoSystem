@@ -1,4 +1,4 @@
-# Ntut computer graphic laboratory slide system source code
+# NTUT computer graphic laboratory slide system source code
 
 Our system is designed for slide purpose. You can check below link for live demo.
 
