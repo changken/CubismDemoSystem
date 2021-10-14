@@ -79,7 +79,10 @@ export class LAppLive2DManager {
    */
   public releaseAllModel(): void {
     for (let i = 0; i < this._models.getSize(); i++) {
-      this._models.at(i).release();
+      // prevent null exception
+      if(this._models.at(i)) {
+        this._models.at(i).release();
+      }
       this._models.set(i, null);
     }
 
