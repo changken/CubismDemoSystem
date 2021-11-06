@@ -243,13 +243,10 @@ export class LAppLive2DManager {
     }
   }
 
-  public startSelectedMotion(no:number){
-    for(let i=0; i<this._models.getSize();i++){
-      if(no === i){
-        const model:LAppModel = this._models.at(i);
-        model.startSelectedMotion(no);
-      }
-    }
+  public startSelectedMotion(no: number){
+    console.log('[external] Start motion ' + no);
+    const model:LAppModel = this._models.at(0);
+    model.startSelectedMotion(no);
   }
 
   /**

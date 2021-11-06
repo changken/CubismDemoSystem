@@ -45,7 +45,9 @@ function change(e) {
     scale = parseFloat(scale);
     motionno = parseInt(motionno);
     modelControl(no, positionx, positiony, scale);
-    startSelectedMotion(no, motionno);
+    setTimeout(() => {
+      startSelectedMotion(motionno);
+    }, 2000);
   } else {
     // default
     // modelControl(0, 0.5, -0.1, 1.1);
