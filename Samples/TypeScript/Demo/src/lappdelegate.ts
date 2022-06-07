@@ -89,7 +89,7 @@ export class LAppDelegate {
     // キャンバスの作成
     //生成canvas
     canvas = document.createElement('canvas');
-    canvas.id = 'live2d';
+    canvas.id = 'live2D';
     //定義canvas大小
     if (LAppDefine.CanvasSize === 'auto') {
       this._resizeCanvas();
@@ -480,7 +480,8 @@ function onMouseMoved(e: MouseEvent): void {
     return;
   }
 
-  const rect = (e.target as Element).getBoundingClientRect();
+  // const rect = (e.target as Element).getBoundingClientRect();
+  const rect = canvas.getBoundingClientRect();
   //const posX: number = e.clientX - rect.left;
   //const posY: number = e.clientY - rect.top;
 
