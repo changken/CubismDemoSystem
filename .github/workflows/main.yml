@@ -8,25 +8,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: cd Demo folder
-        run: |
-          cd Samples/TypeScript/Demo
-
+        
       - name: npm intall
+        working-directory: ./Samples/TypeScript/Demo
         run: |
           npm install -y
 
       - name: npm build
+        working-directory: ./Samples/TypeScript/Demo
         if: success()
         run: |
           unset CI
           npm run build:prod
-
-      - name: npm eject
-        if: success()
-        run: |
-          npm run eject -y
 
       - name: ls
         if: success()
@@ -38,6 +31,6 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
-          build_dir: Samples/TypeScript/Demo
+          build_dir: ./Samples/TypeScript/Demo
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
