@@ -498,10 +498,10 @@ export class LAppModel extends CubismUserModel {
       //   LAppDefine.PriorityIdle
       // );
       //從所有動作挑選一個動作隨機撥放
-      this.startRandomMotion(
-        LAppDefine.MotionGroupAll,
-        LAppDefine.PriorityAll
-      );
+      // this.startRandomMotion(
+      //   LAppDefine.MotionGroupAll,
+      //   LAppDefine.PriorityAll
+      // );
     } else {
       motionUpdated = this._motionManager.updateMotion(
         this._model,

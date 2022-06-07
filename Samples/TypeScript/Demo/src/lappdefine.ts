@@ -16,7 +16,7 @@ import { LogLevel } from '@framework/live2dcubismframework';
 export const CanvasSize: { width: number; height: number } | 'auto' = 'auto';
 
 // 画面
-export const ViewScale = 1.0;
+export const ViewScale = 2.0;
 export const ViewMaxScale = 2.0;
 export const ViewMinScale = 0.8;
 
@@ -63,7 +63,7 @@ export const ModelDir: string[] = ['rice_pro_t03', 'mark_movie_pro_t02', 'hiyori
 export const ModelDirSize: number = ModelDir.length;
 
 //展示模式
-export const displayMode = false;
+export const displayMode = true;
 
 // 外部定義ファイル（json）と合わせる
 export const MotionGroupAll = 'All';
@@ -90,5 +90,5 @@ export const DebugTouchLogEnable = false;
 export const CubismLoggingLevel: LogLevel = LogLevel.LogLevel_Verbose;
 
 // デフォルトのレンダーターゲットサイズ
-export const RenderTargetWidth = 1900;
-export const RenderTargetHeight = 1000;
+export const RenderTargetWidth = 500;
+export const RenderTargetHeight = 600;

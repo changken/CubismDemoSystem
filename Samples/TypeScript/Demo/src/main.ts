@@ -29,10 +29,10 @@ window.onload = (): void => {
   renderCubismModel();
 
   //初始化當前hash的角色
-  if(LAppDefine.displayMode && location.hash){
-    const no = parseInt(location.hash.split("#/")[1]);
-    modelControl(no, 0.5, -0.1, 1.1);
-  }
+  // if(LAppDefine.displayMode && location.hash){
+  //   const no = parseInt(location.hash.split("#/")[1]);
+  //   modelControl(no, 0.5, -0.1, 1.1);
+  // }
 };
 declare global{
   interface Window{
@@ -67,10 +67,10 @@ window.onbeforeunload = (): void => LAppDelegate.releaseInstance();
 /**
  * Process when changing screen size.
  */
-window.onresize = () => {
-  if (LAppDefine.CanvasSize === 'auto') {
-    LAppDelegate.getInstance().onResize();
-  }
-};
+// window.onresize = () => {
+//   if (LAppDefine.CanvasSize === 'auto') {
+//     LAppDelegate.getInstance().onResize();
+//   }
+// };
 
 

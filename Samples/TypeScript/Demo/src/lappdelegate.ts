@@ -13,6 +13,37 @@ import { LAppPal } from './lapppal';
 import { LAppTextureManager } from './lapptexturemanager';
 import { LAppView } from './lappview';
 
+// Import the functions you need from the SDKs you need
+/*import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import {
+  getFirestore,
+  doc,
+  onSnapshot,
+  updateDoc,
+  getDoc
+} from 'firebase/firestore';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: 'AIzaSyBPuCHLBYNPwKewtXFwyGENY9t8I6AEjhI',
+  authDomain: 'moe-new-project.firebaseapp.com',
+  projectId: 'moe-new-project',
+  storageBucket: 'moe-new-project.appspot.com',
+  messagingSenderId: '810076068524',
+  appId: '1:810076068524:web:60eb94eea03ef128199d09',
+  measurementId: 'G-NDTNK4M0QD',
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+const db = getFirestore(app);*/
+
 export let canvas: HTMLCanvasElement = null;
 export let s_instance: LAppDelegate = null;
 export let gl: WebGLRenderingContext = null;
@@ -58,6 +89,7 @@ export class LAppDelegate {
     // キャンバスの作成
     //生成canvas
     canvas = document.createElement('canvas');
+    canvas.id = 'live2d';
     //定義canvas大小
     if (LAppDefine.CanvasSize === 'auto') {
       this._resizeCanvas();
@@ -119,6 +151,7 @@ export class LAppDelegate {
       //註冊鼠標callback函數
       canvas.onmousedown = onClickBegan;
       canvas.onmousemove = onMouseMoved;
+      window.onmousemove = onMouseMoved;
       canvas.onmouseup = onClickEnded;
     }
 
@@ -401,8 +434,10 @@ export class LAppDelegate {
    */
   private _resizeCanvas(): void {
     // console.log(canvas);
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
+    canvas.width = LAppDefine.RenderTargetWidth;
+    canvas.height = LAppDefine.RenderTargetHeight;
   }
 
   _cubismOption: Option; // Cubism SDK Option
@@ -436,9 +471,9 @@ function onClickBegan(e: MouseEvent): void {
  * 當鼠標移動時調用
  */
 function onMouseMoved(e: MouseEvent): void {
-  if (!LAppDelegate.getInstance()._captured) {
-    return;
-  }
+  // if (!LAppDelegate.getInstance()._captured) {
+  //   return;
+  // }
 
   if (!LAppDelegate.getInstance()._view) {
     LAppPal.printMessage('view notfound');
@@ -446,10 +481,33 @@ function onMouseMoved(e: MouseEvent): void {
   }
 
   const rect = (e.target as Element).getBoundingClientRect();
-  const posX: number = e.clientX - rect.left;
-  const posY: number = e.clientY - rect.top;
+  //const posX: number = e.clientX - rect.left;
+  //const posY: number = e.clientY - rect.top;
+
+  const posX: number = Math.max(e.clientX - rect.left, 0);
+  const posY: number = Math.max(0, e.clientY - rect.top);
 
   LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
+
+  /*
+  const myDoc = doc(db, 'mouse_pointer', 'iUg4MKGEBFSea0JznJwp');
+
+  setInterval(async () =>{
+    const docSnap = await getDoc(myDoc);
+    console.log(docSnap.data());
+
+    const posX = docSnap.data().x;
+    const posY = docSnap.data().y;
+    LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
+  }, 3000);
+
+  // onSnapshot(myDoc, doc => {
+  //   console.log(doc.data());
+  //   const posX = doc.data().x;
+  //   const posY = doc.data().y;
+  //   LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
+  // });
+  */
 }
 
 /**
